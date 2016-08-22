@@ -6,20 +6,19 @@ import './Navigation.css'
 export default class Navigation extends Component {
   render() {
     return (
-
-        <Navbar fluid id="nav_center">
+        <Navbar id="nav_center">
           <Nav>
-            <NavItem disabled href="#">Their Story</NavItem>
-            <NavItem disabled href="#">Where & When</NavItem>
-            <NavDropdown title="Invitations" id="basic-nav-dropdown">
-              <MenuItem disabled>Your Invitations</MenuItem>
-              <MenuItem disabled>Attendee List</MenuItem>
+            <NavItem href="#">Our Story</NavItem>
+            <NavItem href="#">Where & When</NavItem>
+            <NavDropdown title="Invitations" id="invite-dropdown">
+              <MenuItem>Your Invitations</MenuItem>
+              <MenuItem>Attendee List</MenuItem>
             </NavDropdown>
-            <NavDropdown title="Useful Info" id="basic-nav-dropdown">
-              <MenuItem disabled>Accommodation</MenuItem>
-              <MenuItem disabled>Parking</MenuItem>
-              <MenuItem disabled>Menus</MenuItem>
-              <MenuItem disabled>Contacts</MenuItem>
+            <NavDropdown title="Useful Info" id="info-dropdown">
+              <MenuItem href="#">Accommodation</MenuItem>
+              <MenuItem href="#">Parking</MenuItem>
+              <MenuItem href="#">Menus</MenuItem>
+              <MenuItem href="#">Contacts</MenuItem>
             </NavDropdown>
           </Nav>
         </Navbar>

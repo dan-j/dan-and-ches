@@ -1,14 +1,14 @@
 h1 {
   text-align: center;
-  margin-top: 0px;
-  padding-top: 20px;
-  font-size: 4em;
+  padding-top: 40px;
+  font-size: 5em;
   font-weight: 500;
+  /*color: #dbdbdb;*/
+  color: #70bdad;
 }
 
-
 header {
-  background: url('static/welcome-to-manchester.png') top center;
-  background-size: auto 400px;
-  height: 400px;
+  background: url('static/welcome-to-manchester.png') top center no-repeat;
+  background-size: auto 450px;
+  height: 450px;
 }

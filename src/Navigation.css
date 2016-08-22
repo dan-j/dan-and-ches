@@ -1,6 +1,17 @@
-.dropdown-menu > .disabled > a {
-  color: #ccc;
-  background-color: transparent;
+.navbar {
+  margin: 0;
+}
+
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:focus,
+.navbar-default .navbar-nav > .disabled > a:hover {
+  color: #000;
+}
+.navbar-nav > li > a {
+  text-decoration: underline;
+}
+.navbar-nav > li > a:hover {
+  text-decoration: none;
 }
 
 .navbar-nav {
@@ -11,10 +22,19 @@
 .navbar-nav > li {
   float: none;
   display: inline-block;
+  text-shadow: none;
 }
 
 .navbar-default {
   background: none;
   border: none;
   box-shadow: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: inherit;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
