@@ -3,12 +3,13 @@ h1 {
   padding-top: 40px;
   font-size: 5em;
   font-weight: 500;
-  /*color: #dbdbdb;*/
-  color: #70bdad;
+  color: #dbdbdb;
+  /*color: #70bdad;*/
 }
 
 header {
-  background: url('static/welcome-to-manchester.png') top center no-repeat;
+  background: url('static/5.png') top center no-repeat;
+  /*background: url('static/welcome-to-manchester.png') top center no-repeat;*/
   background-size: auto 450px;
   height: 450px;
 }
