@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 20px;
+  font-size: 4em;
+  font-weight: 500;
+}
+
+
+header {
+  background: url('static/welcome-to-manchester.png') top center;
+  background-size: auto 400px;
+  height: 400px;
+}
