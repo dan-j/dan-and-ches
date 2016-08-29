@@ -1,7 +1,18 @@
-.content {
-  background-color: #dbdbdb;
-  /*background-color: #70bdad;*/
-  text-align: justify;
-  padding: 50px 20%;
-  /*color: white;*/
+.content h1, .dark-content h1 {
+  font-size: 3em;
+}
+
+.content, .dark-content {
+  text-align: center;
+  padding: 50px;
+}
+
+.dark-content {
+  background-color: black;
+  color: white;
+}
+
+.dark-content p {
+  font-size: 2em;
+  margin: 0;
 }

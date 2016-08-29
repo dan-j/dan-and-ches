@@ -1,40 +1,74 @@
-.navbar {
-  margin: 0;
+@media only screen and (min-width : 1px ){
+  #navbar {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 20;
+    margin: 0;
+    text-align: center;
+  }
+
+  #navbar .navbar-nav {
+    float: none;
+  }
+
+  #navbar .navbar-nav > li > a,
+  #navbar .navbar-nav > li > a:active,
+  #navbar .navbar-nav > li > a:focus {
+    color: white;
+  }
+
+  .navbar-default .navbar-nav > .disabled > a,
+  .navbar-default .navbar-nav > .disabled > a:focus,
+  .navbar-default .navbar-nav > .disabled > a:hover {
+    color: white;
+  }
+
+  .navbar-default .navbar-nav > .open > a,
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > .open > a:hover {
+    background: transparent none;
+    color: #f8b99c;
+  }
+
+  .center-div {
+    width: 100%;
+  }
+
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+    text-shadow: none;
+  }
+
+  .navbar-default {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  a:focus, li:focus {
+    outline: none;
+  }
+
+
 }
 
-.navbar-default .navbar-nav > .disabled > a,
-.navbar-default .navbar-nav > .disabled > a:focus,
-.navbar-default .navbar-nav > .disabled > a:hover {
-  color: #000;
-}
-.navbar-nav > li > a {
-  text-decoration: underline;
-}
-.navbar-nav > li > a:hover {
-  text-decoration: none;
-}
-
-.navbar-nav {
-  width: 100%;
-  text-align: center;
-}
-
-.navbar-nav > li {
-  float: none;
-  display: inline-block;
-  text-shadow: none;
-}
-
-.navbar-default {
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: inherit;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
+@media only screen and (max-width: 767px) {
+  #navbar .navbar-nav .open .dropdown-menu {
+    position: absolute;
+    background-color: white;
+    background-clip: padding-box;
+    /*float: none;*/
+    /*width: auto;*/
+    /*margin-top: 0;*/
+    /*background-color: transparent;*/
+    /*border: 0;*/
+    /*-webkit-box-shadow: none;*/
+    /*box-shadow: none;*/
+  }
 }

@@ -6,7 +6,7 @@ import './Navigation.css'
 export default class Navigation extends Component {
   render() {
     return (
-        <Navbar id="nav_center">
+        <Navbar id="navbar">
           <Nav>
             <NavItem href="#">Our Story</NavItem>
             <NavItem href="#">Where & When</NavItem>
