@@ -1,18 +1,16 @@
-.content h1, .dark-content h1 {
-  font-size: 3em;
-}
-
-.content, .dark-content {
+.content {
   text-align: center;
-  padding: 50px;
 }
 
-.dark-content {
+.dark {
   background-color: black;
   color: white;
 }
 
-.dark-content p {
-  font-size: 2em;
-  margin: 0;
+.content .row {
+  padding: 50px;
+}
+
+.content .col-md-6 {
+  padding: 20px 0;
 }

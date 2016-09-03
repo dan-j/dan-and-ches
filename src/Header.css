@@ -1,12 +1,4 @@
-h1 {
-  font-weight: 700;
-  font-size: 4em;
-  letter-spacing: 4px;
-}
-
 header h1, header h2 {
-  /*margin-bottom: 0px;*/
-  /*padding: 20px 0px 0px;*/
   color: white;
   position: relative;
   z-index: 2;
@@ -14,7 +6,6 @@ header h1, header h2 {
 
 header {
   background: url('static/manchester_3500_1261.png') top center no-repeat;
-  /*background: url('static/welcome-to-manchester.png') top center no-repeat;*/
   background-size: auto 450px;
   height: 450px;
   position: relative;
@@ -26,7 +17,7 @@ header {
   height: 100%;
   width: 100%;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.2;
   z-index: 1;
 }
 

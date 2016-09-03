@@ -7,16 +7,28 @@ export default class Content extends Component {
   render() {
     return (
         <Row>
-          <Grid>
+          <Grid className="content">
             <Row>
-              <Col md={12} className="content">
-                <h1>Save the date</h1>
+              <Col md={12}>
+                <h2>Save the date</h2>
                 <h4>Manchester | 25th February 2017</h4>
               </Col>
             </Row>
+            <Row className="dark">
+              <Col md={12}>
+                <Col md={6}>
+                  <h3>Ceremony</h3>
+                  <p>Pankhurst Suite | Manchester Registry Office</p>
+                </Col>
+                <Col md={6}>
+                  <h3>Meal & Evening</h3>
+                  <p>Artisan | Spinningfields</p>
+                </Col>
+              </Col>
+            </Row>
             <Row>
-              <Col md={12} className="dark-content">
-                <p>Invites to follow</p>
+              <Col md={12} >
+                <h2>Formal day & evening invites to follow</h2>
               </Col>
             </Row>
           </Grid>
