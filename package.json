@@ -2,6 +2,10 @@
   "name": "dan-and-ches",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "6.2.1",
+    "npm": "3.10.6"
+  },
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "6.9.0",
