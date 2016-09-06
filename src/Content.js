@@ -11,7 +11,7 @@ export default class Content extends Component {
             <Row>
               <Col md={12}>
                 <h2>Save the date</h2>
-                <h4>Manchester | 25th February 2017</h4>
+                <h4>25th February 2017</h4>
               </Col>
             </Row>
             <Row className="dark">
@@ -27,7 +27,7 @@ export default class Content extends Component {
               </Col>
             </Row>
             <Row>
-              <Col md={12} >
+              <Col md={12}>
                 <h2>Formal day & evening invites to follow</h2>
               </Col>
             </Row>
