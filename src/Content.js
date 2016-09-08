@@ -12,24 +12,11 @@ export default class Content extends Component {
               <Col md={12}>
                 <h2>Save the date</h2>
                 <h4>25th February 2017</h4>
+                <h4>Manchester</h4>
               </Col>
             </Row>
             <Row className="dark">
-              <Col md={12}>
-                <Col md={6}>
-                  <h3>Ceremony</h3>
-                  <p>Pankhurst Suite | Manchester Registry Office</p>
-                </Col>
-                <Col md={6}>
-                  <h3>Meal & Evening</h3>
-                  <p>Artisan | Spinningfields</p>
-                </Col>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={12}>
-                <h2>Formal day & evening invites to follow</h2>
-              </Col>
+              <h3>Formal day & evening invites to follow</h3>
             </Row>
           </Grid>
         </Row>

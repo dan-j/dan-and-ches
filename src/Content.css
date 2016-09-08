@@ -7,10 +7,6 @@
   color: white;
 }
 
-.content .col-md-6 {
-  padding: 20px 0;
-}
-
 @media only screen and (max-width: 767px) {
   .content .row {
     padding: 30px;
@@ -18,7 +14,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .content .row {
+  .content > .row {
     padding: 50px;
   }
 }
