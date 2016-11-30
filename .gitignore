@@ -5,5 +5,4 @@
 *-compiled.js
 *-compiled.js.map
 /db
-server/config.js
 npm-debug.log
