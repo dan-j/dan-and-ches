@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import config from '../../config';
+import configLoader from '../config-loader';
 
-const { issuer, expiresIn, secretOrKey } = config.jwt;
+const { issuer, expiresIn, secretOrKey } = configLoader().jwt;
 const signOpts = {
   issuer,
   expiresIn,
