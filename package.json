@@ -44,10 +44,10 @@
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2",
     "whatwg-fetch": "^2.0.1",
-    "winston": "^2.3.0"
+    "winston": "^2.3.0",
+    "babel-cli": "^6.18.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^17.0.2",
