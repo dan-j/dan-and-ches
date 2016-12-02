@@ -40,6 +40,7 @@
     "jsonwebtoken": "^7.1.9",
     "mongoose": "^4.6.8",
     "morgan": "^1.7.0",
+    "node-sass": "^3.13.0",
     "passport": "^0.3.2",
     "passport-json": "^1.2.0",
     "passport-jwt": "^2.2.1",
@@ -73,7 +74,6 @@
     "eslint-plugin-react": "^6.7.1",
     "eslint-watch": "^2.1.14",
     "jest": "^17.0.3",
-    "node-sass": "^3.13.0",
     "react-test-renderer": "^15.4.0"
   }
 }
