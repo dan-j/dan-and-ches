@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Web application for Dan & Ches' wedding",
   "repository": "https://github.com/dan-j/dan-and-ches",
+  "engines": {
+    "node": "7.1.0",
+    "npm": "3.10.6"
+  },
   "main": "server.js",
   "scripts": {
     "clean": "rm -rf build",
