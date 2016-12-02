@@ -20,7 +20,7 @@ if (process.env.PLATFORM_ENV === 'heroku') {
   };
 } else {
   console.log('loading non-heroku config');
-  config = require('./config');
+  config = require('../config');
 }
 
 export default () => config;

@@ -2,7 +2,7 @@ import passport from 'passport';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 import JsonStrategy from 'passport-json';
 import winston from 'winston';
-import config from '../config';
+import config from '../../config';
 import User from '../models/User';
 
 // Setting username field to email rather than username

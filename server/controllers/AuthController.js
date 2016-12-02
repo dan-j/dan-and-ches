@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import config from '../config';
+import config from '../../config';
 
 const { issuer, expiresIn, secretOrKey } = config.jwt;
 const signOpts = {
