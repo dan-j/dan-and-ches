@@ -2,7 +2,7 @@ import passport from 'passport';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 import JsonStrategy from 'passport-json';
 import winston from 'winston';
-import config from '../../config';
+import configLoader from '../config-loader';
 import User from '../models/User';
 
 // Setting username field to email rather than username
@@ -12,7 +12,7 @@ const localOptions = {
   passReqToCallback: true,
 };
 
-const {jwt: jwtConfig} = config;
+const {jwt: jwtConfig} = configLoader();
 
 // Setting up local login strategy
 const localStrategy = new JsonStrategy(localOptions, (req, email, pin, done) => {
