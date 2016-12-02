@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentContainer from '../../containers/ContentContainer';
+import SelfieCarousel from './SelfieCarousel';
 
 export default () => (
   <div style={{margin: '10px'}}>
@@ -9,7 +9,7 @@ export default () => (
         display: 'table', margin: 'auto', width: 250, height: 250, backgroundColor: 'grey'
       }}>
         <div style={{display: 'table-cell', textAlign: 'center', verticalAlign: 'middle'}}>
-          Image Placeholder<br />[Carousel]
+          <SelfieCarousel />
         </div>
       </div>
     </div>

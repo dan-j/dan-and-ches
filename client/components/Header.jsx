@@ -1,5 +1,5 @@
 import React from 'react';
-import bgImage from '../static/manchester_2340_843.png';
+import bgImage from '../static/manchester_1943_700.jpg';
 
 export default () => (
   <div style={{
