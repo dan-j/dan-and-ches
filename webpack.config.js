@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=8192',
+        loaders: [ 'file-loader' ],
       },
     ],
   },
@@ -45,6 +45,10 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'client/index.html',
       to: '../client/',
-    }]),
+    // },{
+    //   from: 'client/static',
+    //   to: '../client/static',
+    }
+    ]),
   ],
 };

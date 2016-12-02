@@ -3,7 +3,7 @@ import path from 'path';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import config from './server/config';
+import configLoader from './server/config-loader';
 
 const app = express();
 
@@ -26,7 +26,13 @@ app.use((req, res, next) => {
   require('./server/app')(req, res, next);
 });
 
-const { url, user, pass } = config.db;
-mongoose.connect(url, { user, pass });
+const config = configLoader();
+const {url, user, pass} = config.db;
+mongoose.connect(url, {user, pass});
 
-app.listen(3000, () => console.log('Server running'));
+let port = 3000;
+
+if (process.env.PORT) {
+  port = process.env.PORT;
+}
+app.listen(port, () => console.log(`Server running on port: ${port}`));

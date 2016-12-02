@@ -6,3 +6,4 @@
 *-compiled.js.map
 /db
 npm-debug.log
+.env
