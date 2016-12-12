@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => (
+const Registry = () => (
   <div>
     <h1>Gift Registry</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -13,3 +13,5 @@ export default () => (
     </div>
   </div>
 );
+
+export default Registry;

@@ -1,7 +1,7 @@
 import React from 'react';
 import SelfieCarousel from './SelfieCarousel';
 
-export default () => (
+const OurStory = () => (
   <div style={{margin: '10px'}}>
     <h1>Our story</h1>
     <div style={{textAlign: 'center'}}>
@@ -27,3 +27,5 @@ export default () => (
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 );
+
+export default OurStory;

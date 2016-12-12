@@ -11,9 +11,9 @@ const thumbNailStyle = {
   backgroundColor: 'grey'
 };
 
-export default () => (
+const TheDay = () => (
   <div>
-    <h1>The day</h1>
+    <h1><a name="theday">The day</a></h1>
     <div style={{textAlign: 'center'}}>
       <div style={columnStyle}>
         <div style={thumbNailStyle}>Image of Pankhurst Suite
@@ -39,3 +39,5 @@ export default () => (
     </div>
   </div>
 );
+
+export default TheDay;

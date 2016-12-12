@@ -29,7 +29,7 @@ const imgStyle = {
   maxHeight: '100%',
 };
 
-export default () => (
+const SelfieCarousel = () => (
   <div style={{height: 250, width: 250}}>
     <Slider {...settings}>
       <div><img style={imgStyle} src={img1}/></div>
@@ -47,3 +47,5 @@ export default () => (
     </Slider>
   </div>
 );
+
+export default SelfieCarousel;

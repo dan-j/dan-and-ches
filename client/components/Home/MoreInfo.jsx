@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => (
+const MoreInfo = () => (
   <div>
     <h1>More info</h1>
     <ul>
@@ -9,3 +9,5 @@ export default () => (
     </ul>
   </div>
 );
+
+export default MoreInfo;

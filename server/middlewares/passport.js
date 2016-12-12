@@ -27,7 +27,7 @@ const localStrategy = new JsonStrategy(localOptions, (req, email, pin, done) => 
 
     if (!user) {
       winston.info(`Failed logon attempt with non-existent email: ${email}`);
-      return done(null, false, {error: 'User not found or incorrect PIN'});
+      return done(null, false, { message: 'User not found or incorrect PIN' });
     }
 
     user.comparePin(pin, (err, isMatch) => {
@@ -36,7 +36,7 @@ const localStrategy = new JsonStrategy(localOptions, (req, email, pin, done) => 
       }
       if (!isMatch) {
         winston.info(`Failed logon attempt with incorrect pin, email: ${email}`);
-        return done(null, false, {error: 'User not found or incorrect PIN'});
+        return done(null, false, { message: 'User not found or incorrect PIN' });
       }
 
       req.user = user;

@@ -1,7 +1,7 @@
 import React from 'react';
 import bgImage from '../static/manchester_1943_700.jpg';
 
-export default () => (
+const Header = ({preHeading, mainHeading}) => (
   <div style={{
     textAlign: 'center',
     backgroundImage: `url(${bgImage})`,
@@ -23,16 +23,24 @@ export default () => (
     }}></div>
     <div style={{
       position: 'absolute',
-      top: 0, right: 0, bottom: 0, left: 0,
-      margin: 'auto',
-      height: '50%',
+      top: '50%',
+      right: 0,
+      left: 0,
+      transform: 'translateY(-45%)',
       textTransform: 'uppercase',
       color: 'white',
       letterSpacing: '3px',
       zIndex: 2,
     }}>
-      <h2 style={{fontSize: '2em', fontWeight: 100}}>The wedding of</h2>
-      <h1 style={{fontSize: '3em', fontWeight: 100}}>Daniel &amp; Francesca</h1>
+      {preHeading && <h2 style={{fontSize: '2em', fontWeight: 100}}>{preHeading}</h2>}
+      <h1 style={{fontSize: '3em', fontWeight: 100}}>{mainHeading}</h1>
     </div>
   </div>
 );
+
+Header.propTypes = {
+  preHeading: React.PropTypes.string,
+  mainHeading: React.PropTypes.string.isRequired,
+};
+
+export default Header;

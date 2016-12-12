@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => (
+const Timetable = () => (
   <div>
     <h1>Timetable</h1>
     <ul>
@@ -14,3 +14,5 @@ export default () => (
     </ul>
   </div>
 );
+
+export default Timetable;

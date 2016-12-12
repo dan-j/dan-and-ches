@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => (
+const InvitationsOverview = () => (
   <div>
     <h1>Invitations</h1>
     <p>Although the meal is an intimate affair, the ceremony venue can accommodate more people.
@@ -11,3 +11,5 @@ export default () => (
     </div>
   </div>
 );
+
+export default InvitationsOverview;

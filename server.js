@@ -3,6 +3,7 @@ import path from 'path';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import winston from 'winston';
 import configLoader from './server/config-loader';
 
 const app = express();
@@ -28,7 +29,18 @@ app.use((req, res, next) => {
 
 const config = configLoader();
 const {url, user, pass} = config.db;
-mongoose.connect(url, {user, pass});
+const server = {
+  auto_reconnect: true,
+  socketOptions: {keepAlive: 1, connectTimeoutMS: 30000},
+};
+
+const connectDb = () => mongoose.connect(url, {user, pass, server});
+const db = mongoose.connection;
+
+db.on('error', (err) => winston.info(`db connection triggered an error: ${err}`));
+db.on('disconnected', () => connectDb());
+
+connectDb();
 
 let port = 3000;
 
