@@ -1,11 +1,16 @@
 import React from 'react';
 import timediff from '../../services/timediff';
 
-const UnitDiv = ({value, name}) => (
+const UnitDiv = ({ name, value }) => (
   <div style={{ display: 'inline-block', padding: '2em 1.5em 0em' }}>
-    <span style={{ fontSize: '2em' }}>{value}</span><br />{name}
+    <span style={{ fontSize: '2.5em' }}>{value}</span><br />{name}
   </div>
 );
+
+UnitDiv.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  value: React.PropTypes.number.isRequired,
+};
 
 export default class Countdown extends React.Component {
 
@@ -21,7 +26,7 @@ export default class Countdown extends React.Component {
     this.interval = setInterval(() => {
       this.setState({
         countdown: timediff(new Date(), this.state.then),
-      })
+      });
     }, 1000);
   }
 
@@ -32,7 +37,7 @@ export default class Countdown extends React.Component {
   render() {
     const { days, hours, minutes, seconds } = this.state.countdown;
     return (
-      <div style={{textAlign: 'center'}}>
+      <div>
         <UnitDiv name="days" value={days} />
         <UnitDiv name="hours" value={hours} />
         <UnitDiv name="minutes" value={minutes} />

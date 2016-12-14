@@ -30,20 +30,20 @@ const imgStyle = {
 };
 
 const SelfieCarousel = () => (
-  <div style={{height: 250, width: 250}}>
+  <div style={{ height: 250, width: 250 }}>
     <Slider {...settings}>
-      <div><img style={imgStyle} src={img1}/></div>
-      <div><img style={imgStyle} src={img2}/></div>
-      <div><img style={imgStyle} src={img3}/></div>
-      <div><img style={imgStyle} src={img4}/></div>
-      <div><img style={imgStyle} src={img5}/></div>
-      <div><img style={imgStyle} src={img6}/></div>
-      <div><img style={imgStyle} src={img7}/></div>
-      <div><img style={imgStyle} src={img8}/></div>
-      <div><img style={imgStyle} src={img9}/></div>
-      <div><img style={imgStyle} src={img10}/></div>
-      <div><img style={imgStyle} src={img11}/></div>
-      <div><img style={imgStyle} src={img12}/></div>
+      <div><img role="presentation" style={imgStyle} src={img1} /></div>
+      <div><img role="presentation" style={imgStyle} src={img2} /></div>
+      <div><img role="presentation" style={imgStyle} src={img3} /></div>
+      <div><img role="presentation" style={imgStyle} src={img4} /></div>
+      <div><img role="presentation" style={imgStyle} src={img5} /></div>
+      <div><img role="presentation" style={imgStyle} src={img6} /></div>
+      <div><img role="presentation" style={imgStyle} src={img7} /></div>
+      <div><img role="presentation" style={imgStyle} src={img8} /></div>
+      <div><img role="presentation" style={imgStyle} src={img9} /></div>
+      <div><img role="presentation" style={imgStyle} src={img10} /></div>
+      <div><img role="presentation" style={imgStyle} src={img11} /></div>
+      <div><img role="presentation" style={imgStyle} src={img12} /></div>
     </Slider>
   </div>
 );

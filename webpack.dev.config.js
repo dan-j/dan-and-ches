@@ -33,16 +33,9 @@ module.exports = {
         loaders: ['style', 'css', 'sass'],
       },
       {
-        test: /\.(png|jpg|woff|gif|eot|ttf|svg)$/,
+        test: /\.(png|jpg|woff2?|gif|eot|ttf|svg)(\?.+)?$/,
         loader: 'url-loader?limit=8192',
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/i,
-      //   loaders: [
-      //     'file?hash=sha512&digest=hex&name=[hash].[ext]',
-      //     'image-webpack?bypassOnDebug&optimizationLevel=0&interlaced=false'
-      //   ],
-      // },
     ],
   },
 

@@ -52,11 +52,6 @@ export default class LoginForm extends React.Component {
     this.toggleHover = this.toggleHover.bind(this);
   }
 
-  static propTypes = {
-    onLogon: PropTypes.func.isRequired,
-    error: PropTypes.string,
-  };
-
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
@@ -66,21 +61,18 @@ export default class LoginForm extends React.Component {
   login(e) {
     e.preventDefault();
 
-    const {email, pin} = this.state;
+    const { email, pin } = this.state;
 
-    console.log(`logging in as ${email} with pin ${pin}`);
     api.login(email, pin)
       .then(json => {
-        console.log('saving token and user to localStorage');
         localStorage.token = json.token;
-        localStorage.user = json.user;
         this.props.onLogon();
       })
       .catch(err => this.props.onLogon(err));
   }
 
   toggleHover() {
-    this.setState({hover: !this.state.hover});
+    this.setState({ hover: !this.state.hover });
   }
 
   render() {
@@ -88,40 +80,50 @@ export default class LoginForm extends React.Component {
 
     let errorMessage;
     if (this.props.error) {
-      errorMessage = <span style={{color: 'red'}}>{this.props.error}</span>;
+      errorMessage = <span style={{ color: 'red' }}>{this.props.error}</span>;
     }
 
     return (
-      <div style={{
-        borderRadius: '5px',
-        backgroundColor: '#f2f2f2',
-        padding: '20px',
-        textAlign: 'left',
-      }}>
+      <div
+        style={{
+          borderRadius: '5px',
+          backgroundColor: '#f2f2f2',
+          padding: '20px',
+          textAlign: 'left',
+        }}
+      >
         <form onSubmit={this.login}>
-          <label>Email</label>
-          <input type="text"
-                 name="email"
-                 value={this.state.email}
-                 onChange={this.handleChange}
-                 style={inputStyle}
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            style={inputStyle}
           />
-          <label>Pin</label>
-          <input type="password"
-                 name="pin"
-                 value={this.state.pin}
-                 onChange={this.handleChange}
-                 style={inputStyle}
+          <label htmlFor="pin">Pin</label>
+          <input
+            type="password"
+            name="pin"
+            value={this.state.pin}
+            onChange={this.handleChange}
+            style={inputStyle}
           />
           {errorMessage}
-          <input type="submit"
-                 value="Login"
-                 style={submitStyle}
-                 onMouseEnter={this.toggleHover}
-                 onMouseLeave={this.toggleHover}
+          <input
+            type="submit"
+            value="Login"
+            style={submitStyle}
+            onMouseEnter={this.toggleHover}
+            onMouseLeave={this.toggleHover}
           />
         </form>
       </div>
     );
   }
 }
+
+LoginForm.propTypes = {
+  onLogon: PropTypes.func.isRequired,
+  error: PropTypes.string,
+};

@@ -3,18 +3,18 @@ import React from 'react';
 const columnStyle = {
   display: 'inline-block',
   margin: 25,
-  width: 250
+  width: 250,
 };
 
 const thumbNailStyle = {
   height: 250,
-  backgroundColor: 'grey'
+  backgroundColor: 'grey',
 };
 
 const TheDay = () => (
   <div>
-    <h1><a name="theday">The day</a></h1>
-    <div style={{textAlign: 'center'}}>
+    <h2><a name="theday">The day</a></h2>
+    <div>
       <div style={columnStyle}>
         <div style={thumbNailStyle}>Image of Pankhurst Suite
         </div>

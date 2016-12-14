@@ -8,10 +8,9 @@ import Timetable from './Timetable';
 import Invitations from './InvitationsOverview';
 import Registry from './Registry';
 import MoreInfo from './MoreInfo';
-import ContentContainer from '../../containers/ContentContainer';
 
 const Home = () => (
-  <ContentContainer>
+  <div>
     <Header preHeading="The wedding of" mainHeading="Daniel &amp; Francesca" />
     <Countdown />
     <OurStory />
@@ -20,7 +19,7 @@ const Home = () => (
     <Invitations />
     <Registry />
     <MoreInfo />
-  </ContentContainer>
+  </div>
 );
 
 export default Home;

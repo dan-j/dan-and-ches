@@ -28,13 +28,11 @@ module.exports = {
         loaders: ['style', 'css', 'sass'],
       },
       {
-        test: /\.(png|jpg|woff|gif|eot|ttf|svg)$/,
-        loaders: [ 'file-loader' ],
+        test: /\.(png|jpg|woff2?|gif|eot|ttf|svg)(\?.+)?$/,
+        loaders: ['file-loader'],
       },
     ],
   },
-
-  devtool: 'source-map',
 
   plugins: [
     new webpack.DefinePlugin({
@@ -45,10 +43,6 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'client/index.html',
       to: '../client/',
-    // },{
-    //   from: 'client/static',
-    //   to: '../client/static',
-    }
-    ]),
+    }]),
   ],
 };

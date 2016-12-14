@@ -15,8 +15,8 @@ const UserSchema = new Schema({
 });
 
 /* this function errors if using ES6 => notation!!! */
-UserSchema.methods.comparePin = function(candidatePin, cb) {
-  cb(null, this.pin === candidatePin)
+UserSchema.methods.comparePin = function comparePin(candidatePin, cb) {
+  cb(null, this.pin === candidatePin);
 };
 
 export default mongoose.model('User', UserSchema);

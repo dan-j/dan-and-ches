@@ -2,14 +2,17 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import ContentContainer from '../containers/ContentContainer';
 
-export default class App extends React.Component {
+const App = ({ children }) => (
+  <div>
+    <Navigation />
+    <ContentContainer>
+      {children}
+    </ContentContainer>
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-        <Navigation/>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+App.propTypes = {
+  children: React.PropTypes.node,
+};
+
+export default App;

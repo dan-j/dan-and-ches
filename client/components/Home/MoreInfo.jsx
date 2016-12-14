@@ -2,7 +2,7 @@ import React from 'react';
 
 const MoreInfo = () => (
   <div>
-    <h1>More info</h1>
+    <h2>More info</h2>
     <ul>
       <li>Getting here</li>
       <li>Contact Us</li>

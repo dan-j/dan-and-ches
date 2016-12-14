@@ -6,7 +6,7 @@ import api from './routes/api';
 
 const app = express.Router();
 
-const sendIndex = (res) => res.sendFile(path.join(__dirname, '../client/index.html'));
+const sendIndex = res => res.sendFile(path.join(__dirname, '../client/index.html'));
 
 // Middleware to require login/auth
 export const jwtVerify = passport.authenticate('jwt', { session: false });
@@ -16,7 +16,7 @@ export const localLogin = (req, res, next) => {
       res.status(500).json({
         ...err,
         ...info,
-      })
+      });
     }
 
     if (!user) {

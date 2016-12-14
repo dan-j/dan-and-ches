@@ -12,36 +12,35 @@ const localOptions = {
   passReqToCallback: true,
 };
 
-const {jwt: jwtConfig} = configLoader();
+const { jwt: jwtConfig } = configLoader();
 
 // Setting up local login strategy
 const localStrategy = new JsonStrategy(localOptions, (req, email, pin, done) => {
+  const trimmedEmail = email.trim();
+  const trimmedPin = pin.trim();
 
-  email = email.trim();
-  pin = pin.trim();
-
-  User.findOne({email}, '+pin +email', (err, user) => {
+  User.findOne({ email: trimmedEmail }, '+pin +email', (err, user) => {
     if (err) {
-      return done(err);
+      done(err);
     }
 
     if (!user) {
       winston.info(`Failed logon attempt with non-existent email: ${email}`);
-      return done(null, false, { message: 'User not found or incorrect PIN' });
+      done(null, false, { message: 'User not found or incorrect PIN' });
     }
 
-    user.comparePin(pin, (err, isMatch) => {
-      if (err) {
-        return done(err);
+    user.comparePin(trimmedPin, (pinErr, isMatch) => {
+      if (pinErr) {
+        done(pinErr);
       }
       if (!isMatch) {
         winston.info(`Failed logon attempt with incorrect pin, email: ${email}`);
-        return done(null, false, { message: 'User not found or incorrect PIN' });
+        done(null, false, { message: 'User not found or incorrect PIN' });
       }
 
-      req.user = user;
+      Object.assign(req, { user });
 
-      return done(null, user);
+      done(null, user);
     });
   });
 });
@@ -51,29 +50,25 @@ const opts = {
   ...jwtConfig,
 };
 
-const jwtStrategy = new JwtStrategy(opts, (jwt_payload, done) => {
+const jwtStrategy = new JwtStrategy(opts, (jwtPayload, done) => {
+  winston.info(`Verifying token for sub: ${jwtPayload.sub}`);
 
-  winston.info(`Verifying token for sub: ${jwt_payload.sub}`);
-
-  User.findOne({email: jwt_payload.sub}, (err, user) => {
+  User.findOne({ email: jwtPayload.sub }, (err, user) => {
     if (err) {
-      winston.error(`Error validating sub: ${jwt_payload.sub}: ${err}`);
-      return done(err, false);
+      winston.error(`Error validating sub: ${jwtPayload.sub}: ${err}`);
+      done(err, false);
     }
     if (user) {
       done(null, user);
     } else {
-      winston.info(`Invalid token provided with sub: ${jwt_payload.sub}`);
+      winston.info(`Invalid token provided with sub: ${jwtPayload.sub}`);
       done(null, false);
     }
   });
 });
-
 
 module.exports = (app) => {
   app.use(passport.initialize());
   passport.use(jwtStrategy);
   passport.use(localStrategy);
 };
-
-

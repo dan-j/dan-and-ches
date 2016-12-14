@@ -2,13 +2,13 @@ import React from 'react';
 import SelfieCarousel from './SelfieCarousel';
 
 const OurStory = () => (
-  <div style={{margin: '10px'}}>
-    <h1>Our story</h1>
-    <div style={{textAlign: 'center'}}>
-      <div style={{
-        display: 'table', margin: 'auto', width: 250, height: 250, backgroundColor: 'grey'
-      }}>
-        <div style={{display: 'table-cell', textAlign: 'center', verticalAlign: 'middle'}}>
+  <div style={{ margin: '10px' }}>
+    <h2>Our Story</h2>
+    <div>
+      <div
+        style={{ margin: 'auto', width: 250, height: 250, backgroundColor: 'grey' }}
+      >
+        <div>
           <SelfieCarousel />
         </div>
       </div>

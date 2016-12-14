@@ -11,7 +11,7 @@ export default class AuthController {
 
   static login(req, res) {
     const user = req.user.toObject();
-    delete user['pin'];
+    delete user.pin;
 
     const payload = {
       sub: user.email,
@@ -20,9 +20,8 @@ export default class AuthController {
     const token = jwt.sign(payload, secretOrKey, signOpts);
 
     res.status(200).json({
-      token: `JWT ${token}`,
-      user
-    })
-
+      token,
+      user,
+    });
   }
 }

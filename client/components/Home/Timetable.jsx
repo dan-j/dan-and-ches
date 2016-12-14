@@ -2,7 +2,7 @@ import React from 'react';
 
 const Timetable = () => (
   <div>
-    <h1>Timetable</h1>
+    <h2>Timetable</h2>
     <ul>
       <li>1:20pm - Arrival</li>
       <li>1:40pm - Ceremony</li>

@@ -23,18 +23,20 @@ require('./server/middlewares/passport')(app);
 
 // Include server routes as a middleware, requiring like this
 // allows hot reloading when in development mode
-app.use((req, res, next) => {
+const application = (req, res, next) => {
   require('./server/app')(req, res, next);
-});
-
-const config = configLoader();
-const {url, user, pass} = config.db;
-const server = {
-  auto_reconnect: true,
-  socketOptions: {keepAlive: 1, connectTimeoutMS: 30000},
 };
 
-const connectDb = () => mongoose.connect(url, {user, pass, server});
+app.use(application);
+
+const config = configLoader();
+const { url, user, pass } = config.db;
+const server = {
+  auto_reconnect: true,
+  socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 },
+};
+
+const connectDb = () => mongoose.connect(url, { user, pass, server });
 const db = mongoose.connection;
 
 db.on('error', (err) => winston.info(`db connection triggered an error: ${err}`));
@@ -47,4 +49,4 @@ let port = 3000;
 if (process.env.PORT) {
   port = process.env.PORT;
 }
-app.listen(port, () => console.log(`Server running on port: ${port}`));
+app.listen(port, () => winston.info(`Server running on port: ${port}`));

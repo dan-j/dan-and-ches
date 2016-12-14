@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import 'font-awesome/scss/font-awesome.scss';
 import Root from './containers/Root';
 import './_index.scss';
 
@@ -18,8 +19,10 @@ function renderApp(App) {
 if (module.hot) {
   module.hot.accept(
     './containers/Root',
-    () => renderApp(require('./containers/Root').default)
-  );
+    () => {
+      const root = require('./containers/Root');
+      renderApp(root.default);
+    });
 }
 
 renderApp(Root);

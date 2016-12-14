@@ -27,7 +27,7 @@ watcher.on('ready', () => {
   watcher.on('all', () => {
     winston.info('Clearing require cache for ./server');
     Object.keys(require.cache).forEach((id) => {
-      const baseRegex = '[/\]server[/\]';
+      const baseRegex = '/server/?';
 
       const regex = ignoreSubPackages.isEmpty
         ? new RegExp(baseRegex)
