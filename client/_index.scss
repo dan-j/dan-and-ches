@@ -32,6 +32,11 @@ a {
   color: inherit;
 }
 
+a.active {
+  color: #DB807D;
+  border-top: 0.25em solid #DB807D;
+}
+
 @media (max-width: 767px) {
   body {
     font-size: 14px;

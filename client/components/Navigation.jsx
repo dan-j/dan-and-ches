@@ -1,24 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const NavItem = ({ children }) => (
+const NavItem = ({ to, children }) => (
   <li
     style={{
       display: 'inline-block',
-      padding: '0.5em',
+      letterSpacing: '1px',
+      textTransform: 'uppercase',
     }}
-  >{children}</li>
+  >
+    <Link
+      style={{ padding: '0.5em', margin: '0 0.5em', display: 'inherit' }}
+      to={to}
+      activeClassName="active"
+      onlyActiveOnIndex
+    >{children}</Link>
+  </li>
 );
 
 NavItem.propTypes = {
+  to: React.PropTypes.string,
   children: React.PropTypes.node,
 };
 
 const Navigation = () => (
-  <div style={{ textAlign: 'right', backgroundColor: '#333', color: 'white' }}>
+  <div style={{ float: 'right', color: 'white', zIndex: 2, position: 'relative' }}>
     <ul style={{ margin: 0 }}>
-      <NavItem><Link to="/">Home</Link></NavItem>
-      <NavItem><Link to="/invitations">Invitations</Link></NavItem>
+      <NavItem to="/">Home</NavItem>
+      <NavItem to="/invitations">Invitations</NavItem>
       <NavItem>Registry</NavItem>
       <NavItem>More Info</NavItem>
     </ul>

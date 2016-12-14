@@ -1,7 +1,6 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import { Table } from 'reactable';
-import Header from '../Header';
 import './_invitations.scss';
 
 const buttonStyle = {
@@ -52,7 +51,6 @@ const Invitations = ({ myInvitation, otherInvitations, onLogoff }) => {
 
   return (
     <div>
-      <Header mainHeading="Invitations" />
       <div style={{ margin: '0 1em' }}>
         <button
           style={buttonStyle}

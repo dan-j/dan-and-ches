@@ -1,7 +1,8 @@
 import React from 'react';
+import Navigation from './Navigation';
 import bgImage from '../static/manchester_1170_442@2x.jpg';
 
-const Header = ({ preHeading, mainHeading }) => (
+const Header = ({ preHeader, mainHeader }) => (
   <div
     style={{
       textAlign: 'center',
@@ -15,6 +16,7 @@ const Header = ({ preHeading, mainHeading }) => (
       position: 'relative',
     }}
   >
+    <Navigation />
     <div
       style={{
         backgroundColor: 'black',
@@ -38,15 +40,15 @@ const Header = ({ preHeading, mainHeading }) => (
         zIndex: 2,
       }}
     >
-      {preHeading && <h2 style={{ marginBottom: 0, fontWeight: 100 }}>{preHeading}</h2>}
-      <h1 style={{ marginTop: 0, fontSize: '4em', fontWeight: 100 }}>{mainHeading}</h1>
+      {preHeader && <h2 style={{ marginBottom: 0, fontWeight: 100 }}>{preHeader}</h2>}
+      <h1 style={{ marginTop: 0, fontSize: '4em', fontWeight: 100 }}>{mainHeader}</h1>
     </div>
   </div>
 );
 
 Header.propTypes = {
-  preHeading: React.PropTypes.string,
-  mainHeading: React.PropTypes.string.isRequired,
+  preHeader: React.PropTypes.string,
+  mainHeader: React.PropTypes.string.isRequired,
 };
 
 export default Header;

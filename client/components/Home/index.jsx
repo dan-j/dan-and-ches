@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Header from '../Header';
 import Countdown from './Countdown';
 import OurStory from './OurStory';
 import TheDay from './TheDay';
@@ -11,7 +10,6 @@ import MoreInfo from './MoreInfo';
 
 const Home = () => (
   <div>
-    <Header preHeading="The wedding of" mainHeading="Daniel &amp; Francesca" />
     <Countdown />
     <OurStory />
     <TheDay />

@@ -10,8 +10,15 @@ import InvitationsContainer from './InvitationsContainer';
 const Root = () => (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="invitations" component={InvitationsContainer} />
+      <IndexRoute
+        component={Home}
+        header={{ preHeader: 'The Wedding Of', mainHeader: 'Daniel & Francesca' }}
+      />
+      <Route
+        path="invitations"
+        component={InvitationsContainer}
+        header={{ mainHeader: 'Invitations' }}
+      />
     </Route>
   </Router>
 );
