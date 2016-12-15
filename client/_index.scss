@@ -2,23 +2,23 @@ body {
   font-family: Khula, cursive;
   margin: 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
+}
 
-  .container {
-    max-width: 1170px;
-    margin: auto;
-    padding: 20px;
-  }
+h1, h2, h3 {
+  text-transform: uppercase;
 }
 
 h1 {
-  font-size: 3em;
-  text-transform: uppercase;
+  font-size: 1.7em;
 }
 
 h2 {
-  font-size: 2em;
-  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.1em;
 }
 
 ul {
@@ -37,13 +37,121 @@ a.active {
   border-top: 0.25em solid #DB807D;
 }
 
-@media (max-width: 767px) {
-  body {
-    font-size: 14px;
+//.login, .logout {
+//  background: #DB807D;
+//  color: white;
+//  border-radius: 5px;
+//}
 
-    .container {
-      margin: 0;
-      padding: 0;
-    }
+.container {
+  margin: 2em 1em 2em;
+}
+
+$headerHeight: 230px;
+
+#header {
+  background-size: auto $headerHeight;
+  height: $headerHeight;
+}
+
+.countdown {
+  font-size: 11px;
+}
+
+@media (min-width: 360px) {
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  $headerHeight: 250px;
+
+  #header {
+    background-size: auto $headerHeight;
+    height: $headerHeight;
+  }
+
+  .countdown {
+    font-size: 13px;
+  }
+
+}
+
+@media (min-width: 480px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    margin: 2em;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  $headerHeight: 300px;
+
+  #header {
+    background-size: auto $headerHeight;
+    height: $headerHeight;
+  }
+
+  .countdown {
+    font-size: 14px;
   }
 }
+
+@media (min-width: 768px) {
+
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  $headerHeight: 380px;
+
+  #header {
+    background-size: auto $headerHeight;
+    height: $headerHeight;
+  }
+}
+
+@media (min-width: 900px) {
+
+  //body {
+  //  font-size: 16px;
+  //}
+
+  .container {
+    max-width: 900px;
+    width: 900px;
+    margin: 2em auto;
+  }
+
+  $headerHeight: 442px;
+
+  #header {
+    background-size: auto $headerHeight;
+    height: $headerHeight;
+  }
+
+  .countdown {
+    font-size: 16px;
+  }
+
+}
+
+

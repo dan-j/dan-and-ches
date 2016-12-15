@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import api from '../../../services/api';
+import api from '../../services/api';
 
 const inputStyle = {
   width: '100%',
@@ -14,7 +14,7 @@ const inputStyle = {
 
 const submitStylePlain = {
   width: '100%',
-  backgroundColor: '#4CAF50',
+  backgroundColor: '#DB807D',
   color: 'white',
   padding: '14px 20px',
   margin: '8px 0',
@@ -26,7 +26,7 @@ const submitStylePlain = {
 
 const submitStyleHovering = {
   width: '100%',
-  backgroundColor: '#45A049',
+  backgroundColor: '#C9716E',
   color: 'white',
   padding: '14px 20px',
   margin: '8px 0',
@@ -92,7 +92,7 @@ export default class LoginForm extends React.Component {
           textAlign: 'left',
         }}
       >
-        <form onSubmit={this.login}>
+        <form onSubmit={this.login} style={{ marginBottom: 0 }}>
           <label htmlFor="email">Email</label>
           <input
             type="text"

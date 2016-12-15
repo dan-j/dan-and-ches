@@ -2,8 +2,10 @@ import React from 'react';
 import timediff from '../../services/timediff';
 
 const UnitDiv = ({ name, value }) => (
-  <div style={{ display: 'inline-block', padding: '2em 1.5em 0em' }}>
-    <span style={{ fontSize: '2.5em' }}>{value}</span><br />{name}
+  <div style={{ display: 'inline-block', padding: '0em 1.5em 0em' }}>
+    <span style={{ fontSize: '2.5em' }}>{value}</span>
+    <br />
+    <span style={{ fontSize: '1.1em' }}>{name}</span>
   </div>
 );
 
@@ -37,7 +39,7 @@ export default class Countdown extends React.Component {
   render() {
     const { days, hours, minutes, seconds } = this.state.countdown;
     return (
-      <div>
+      <div className="countdown">
         <UnitDiv name="days" value={days} />
         <UnitDiv name="hours" value={hours} />
         <UnitDiv name="minutes" value={minutes} />

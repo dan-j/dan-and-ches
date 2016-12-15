@@ -1,6 +1,5 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import { Table } from 'reactable';
 import './_invitations.scss';
 
 const buttonStyle = {
@@ -15,12 +14,12 @@ const buttonStyle = {
 };
 
 const EventInvitationDiv = ({ name, value }) => (
-  <div style={{ display: 'inline-block', padding: '2em 1.5em' }}>
-    <span style={{ fontSize: '2em' }}>
+  <div style={{ display: 'inline-block', width: 100, height: 100 }}>
+    <span style={{ display: 'inherit', fontSize: '2em' }}>
       <FontAwesome name={value} />
     </span>
     <br />
-    {name}
+    <span style={{ display: 'inherit', margin: '1em' }}>{name}</span>
   </div>
 );
 
@@ -29,7 +28,7 @@ EventInvitationDiv.propTypes = {
   value: React.PropTypes.string.isRequired,
 };
 
-const Invitations = ({ myInvitation, otherInvitations, onLogoff }) => {
+const Invitations = ({ myInvitation }) => {
   let invitations;
 
   if (myInvitation) {
@@ -51,26 +50,12 @@ const Invitations = ({ myInvitation, otherInvitations, onLogoff }) => {
 
   return (
     <div>
-      <div style={{ margin: '0 1em' }}>
-        <button
-          style={buttonStyle}
-          onClick={onLogoff}
-        >Logout
-        </button>
+      <div>
         <p>We hope you can attend the wedding, see below for your invitation</p>
 
         {invitations || 'Loading...'}
 
         <button style={buttonStyle} disabled>RSVP (coming soon)</button>
-        <h2 style={{ marginBottom: 0 }}>All invitations</h2>
-        <Table
-          className="invitation-table"
-          style={{ minWidth: 350, margin: 'auto', width: '100%' }}
-          data={otherInvitations}
-          filterable={['name']}
-          itemsPerPage={10}
-          pageButtonLimit={5}
-        />
       </div>
     </div>
   );
@@ -84,8 +69,6 @@ const invitationShape = React.PropTypes.shape({
 
 Invitations.propTypes = {
   myInvitation: invitationShape,
-  otherInvitations: React.PropTypes.arrayOf(invitationShape),
-  onLogoff: React.PropTypes.func.isRequired,
 };
 
 export default Invitations;

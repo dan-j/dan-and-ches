@@ -39,7 +39,10 @@ const server = {
 const connectDb = () => mongoose.connect(url, { user, pass, server });
 const db = mongoose.connection;
 
-db.on('error', (err) => winston.info(`db connection triggered an error: ${err}`));
+db.on('error', (err) => {
+  winston.info(`db connection triggered an error: ${err}`)
+  connectDb();
+});
 db.on('disconnected', () => connectDb());
 
 connectDb();

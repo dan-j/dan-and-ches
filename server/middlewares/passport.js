@@ -16,31 +16,31 @@ const { jwt: jwtConfig } = configLoader();
 
 // Setting up local login strategy
 const localStrategy = new JsonStrategy(localOptions, (req, email, pin, done) => {
-  const trimmedEmail = email.trim();
+  const trimmedEmail = email.trim().toLowerCase();
   const trimmedPin = pin.trim();
 
   User.findOne({ email: trimmedEmail }, '+pin +email', (err, user) => {
     if (err) {
-      done(err);
+      return done(err);
     }
 
     if (!user) {
       winston.info(`Failed logon attempt with non-existent email: ${email}`);
-      done(null, false, { message: 'User not found or incorrect PIN' });
+      return done(null, false, { message: 'User not found or incorrect PIN' });
     }
 
     user.comparePin(trimmedPin, (pinErr, isMatch) => {
       if (pinErr) {
-        done(pinErr);
+        return done(pinErr);
       }
       if (!isMatch) {
         winston.info(`Failed logon attempt with incorrect pin, email: ${email}`);
-        done(null, false, { message: 'User not found or incorrect PIN' });
+        return done(null, false, { message: 'User not found or incorrect PIN' });
       }
 
       Object.assign(req, { user });
 
-      done(null, user);
+      return done(null, user);
     });
   });
 });
@@ -56,14 +56,14 @@ const jwtStrategy = new JwtStrategy(opts, (jwtPayload, done) => {
   User.findOne({ email: jwtPayload.sub }, (err, user) => {
     if (err) {
       winston.error(`Error validating sub: ${jwtPayload.sub}: ${err}`);
-      done(err, false);
+      return done(err, false);
     }
     if (user) {
-      done(null, user);
-    } else {
-      winston.info(`Invalid token provided with sub: ${jwtPayload.sub}`);
-      done(null, false);
+      return done(null, user);
     }
+
+    winston.info(`Invalid token provided with sub: ${jwtPayload.sub}`);
+    return done(null, false);
   });
 });
 

@@ -5,7 +5,17 @@ import 'slick-carousel/slick/slick-theme.css';
 import App from '../components/App';
 import Home from '../components/Home/index';
 import InvitationsContainer from './InvitationsContainer';
+import LoginContainer, { isLoggedIn } from '../containers/LoginContainer';
+import LogoutContainer from './LogoutContainer';
 
+function requireAuth(nextState, replace) {
+  if (!isLoggedIn()) {
+    replace({
+      pathname: '/login',
+      state: { nextPathname: nextState.location.pathname },
+    });
+  }
+}
 
 const Root = () => (
   <Router history={browserHistory}>
@@ -17,9 +27,12 @@ const Root = () => (
       <Route
         path="invitations"
         component={InvitationsContainer}
-        header={{ mainHeader: 'Invitations' }}
+        header={{ mainHeader: 'You\'re Invited!' }}
+        onEnter={requireAuth}
       />
     </Route>
+    <Route path="/login" component={LoginContainer} />
+    <Route path="/logout" component={LogoutContainer} />
   </Router>
 );
 
