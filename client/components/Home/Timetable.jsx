@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Timetable = () => (
-  <div>
+  <section>
     <h2>Timetable</h2>
     <ul>
       <li>1:20pm - Arrival</li>
@@ -12,7 +12,7 @@ const Timetable = () => (
       <li>4:30pm - Meal</li>
       <li>7:00pm - Party!</li>
     </ul>
-  </div>
+  </section>
 );
 
 export default Timetable;

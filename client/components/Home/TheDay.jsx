@@ -4,7 +4,7 @@ import diningRoomImg from '../../static/artisan-dining-room_500_333.jpg';
 import barImg from '../../static/artisan-bar_500_333.jpg';
 
 const TheDay = () => (
-  <div>
+  <section>
     <h2 style={{ marginBottom: '0.5em' }}><a name="theday">The day</a></h2>
     <div className="column-group">
       <div className="column-3">
@@ -28,7 +28,7 @@ const TheDay = () => (
           area</p>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default TheDay;

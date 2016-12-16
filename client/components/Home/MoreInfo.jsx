@@ -1,13 +1,13 @@
 import React from 'react';
 
 const MoreInfo = () => (
-  <div>
+  <section>
     <h2>More info</h2>
     <ul>
       <li>Getting here</li>
       <li>Contact Us</li>
     </ul>
-  </div>
+  </section>
 );
 
 export default MoreInfo;

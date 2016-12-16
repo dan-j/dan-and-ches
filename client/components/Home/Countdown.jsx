@@ -39,12 +39,12 @@ export default class Countdown extends React.Component {
   render() {
     const { days, hours, minutes, seconds } = this.state.countdown;
     return (
-      <div className="countdown">
+      <section className="countdown">
         <UnitDiv name="days" value={days} />
         <UnitDiv name="hours" value={hours} />
         <UnitDiv name="minutes" value={minutes} />
         <UnitDiv name="seconds" value={seconds} />
-      </div>
+      </section>
     );
   }
 }

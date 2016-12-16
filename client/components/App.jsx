@@ -8,7 +8,7 @@ const App = (props) => {
   return (
     <div>
       <Header {...header} />
-      <ContentContainer>
+      <ContentContainer main>
         {props.children}
       </ContentContainer>
       <Footer />

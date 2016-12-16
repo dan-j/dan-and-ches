@@ -11,11 +11,13 @@ const Footer = () => (
     }}
   >
     <ContentContainer>
-      <ul>
-        <li><Link to="/getting-here">Getting Here</Link></li>
-        <li>Useful Links</li>
-        <li>Contact Us</li>
-      </ul>
+      <section>
+        <ul>
+          <li><Link to="/getting-there">Getting Here</Link></li>
+          <li>Useful Links</li>
+          <li>Contact Us</li>
+        </ul>
+      </section>
     </ContentContainer>
   </footer>
 );

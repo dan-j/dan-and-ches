@@ -78,6 +78,7 @@ export default class Navigation extends React.Component {
       maxWidth: 1170, margin: 'auto', textAlign: 'right', color, zIndex: 3, position: 'relative',
     };
 
+    const navClassNames = classNames('navigation', { 'nav-open': this.state.burgerPressed });
     const listClassNames = classNames('nav-menu', { 'nav-menu-open': this.state.burgerPressed });
     const divStyle = this.state.burgerPressed
       ? { ...baseDivStyle, background }
@@ -87,22 +88,24 @@ export default class Navigation extends React.Component {
     const itemClickHandler = this.state.burgerPressed ? this.toggleMenu : null;
 
     return (
-      <div className="navigation" style={divStyle}>
-        <a
-          className="nav-burger"
-          style={{ ...linkStyle, fontSize: '2em', margin: '0', color }}
-          onClick={this.toggleMenu}
-        >
-          <FontAwesome name="bars" />
-        </a>
-        <ul className={listClassNames} style={{ margin: 0 }}>
-          <NavItem to="/" onClick={itemClickHandler}>Home</NavItem>
-          <NavItem to="/invitations" onClick={itemClickHandler}>Invitations</NavItem>
-          <NavItem>Registry</NavItem>
-          <NavItem>More Info</NavItem>
-          {loginLogoff}
-        </ul>
-      </div>
+      <header>
+        <nav className={navClassNames} style={divStyle}>
+          <a
+            className="nav-burger"
+            style={{ ...linkStyle, fontSize: '2em', margin: '0', color }}
+            onClick={this.toggleMenu}
+          >
+            <FontAwesome name="bars" />
+          </a>
+          <ul className={listClassNames} style={{ margin: 0 }}>
+            <NavItem to="/" onClick={itemClickHandler}>Home</NavItem>
+            <NavItem to="/invitations" onClick={itemClickHandler}>Invitations</NavItem>
+            <NavItem>Registry</NavItem>
+            <NavItem to="/getting-there" onClick={itemClickHandler}>Getting There</NavItem>
+            {loginLogoff}
+          </ul>
+        </nav>
+      </header>
     );
   }
 }

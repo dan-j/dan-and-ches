@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GettingHere = () => (
+const GettingThere = () => (
   <div className="column-group" style={{ textAlign: 'left' }}>
     <div className="column-2">
       <h3>The Ceremony</h3>
@@ -22,4 +22,4 @@ const GettingHere = () => (
   </div>
 );
 
-export default GettingHere;
+export default GettingThere;

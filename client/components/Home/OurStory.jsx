@@ -2,7 +2,7 @@ import React from 'react';
 import SelfieCarousel from './SelfieCarousel';
 
 const OurStory = () => (
-  <div>
+  <section>
     <h2>Our Story</h2>
     <div>
       <div
@@ -34,7 +34,7 @@ const OurStory = () => (
           just as Dan was about to open it he instead got on one knee and popped the question. </p>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default OurStory;

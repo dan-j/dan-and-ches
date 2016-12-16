@@ -1,13 +1,15 @@
 import React from 'react';
+import classNames from 'classnames';
 
 const ContentContainer = (props) => (
-  <section className={'container'}>
+  <div className={classNames('container', { 'main-content': props.main })}>
     {props.children}
-  </section>
+  </div>
 );
 
 ContentContainer.propTypes = {
   children: React.PropTypes.node,
+  main: React.PropTypes.bool,
 };
 
 export default ContentContainer;

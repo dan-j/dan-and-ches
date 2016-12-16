@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const InvitationsOverview = () => (
-  <div>
+  <section>
     <h2>Invitations</h2>
     <p>Although the meal is an intimate affair, the ceremony venue can accommodate more people.
       For those that aren&apos;t coming to the meal that wish to attend the ceremony you&apos;re
@@ -10,7 +10,7 @@ const InvitationsOverview = () => (
     <Link className="button" style={{ display: 'inline-block' }}>
       See the Invitations
     </Link>
-  </div>
+  </section>
 );
 
 export default InvitationsOverview;

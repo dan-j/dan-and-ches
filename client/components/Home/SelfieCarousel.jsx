@@ -30,7 +30,7 @@ const imgStyle = {
 };
 
 const SelfieCarousel = () => (
-  <div style={{ height: 250, width: 250 }}>
+  <section style={{ height: 250, width: 250 }}>
     <Slider {...settings}>
       <div><img role="presentation" style={imgStyle} src={img1} /></div>
       <div><img role="presentation" style={imgStyle} src={img2} /></div>
@@ -45,7 +45,7 @@ const SelfieCarousel = () => (
       <div><img role="presentation" style={imgStyle} src={img11} /></div>
       <div><img role="presentation" style={imgStyle} src={img12} /></div>
     </Slider>
-  </div>
+  </section>
 );
 
 export default SelfieCarousel;
