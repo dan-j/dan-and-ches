@@ -51,7 +51,9 @@ const Invitations = ({ myInvitation }) => {
   return (
     <div>
       <div>
-        <p>We hope you can attend the wedding, see below for your invitation</p>
+        <p style={{ textAlign: 'center' }}>
+          We hope you can attend the wedding, see below for your invitation
+        </p>
 
         {invitations || 'Loading...'}
 

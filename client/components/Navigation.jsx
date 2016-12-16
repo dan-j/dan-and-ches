@@ -83,6 +83,9 @@ export default class Navigation extends React.Component {
       ? { ...baseDivStyle, background }
       : baseDivStyle;
 
+    // clicking a NavItem when the burger is pressed should toggle the menu off again
+    const itemClickHandler = this.state.burgerPressed ? this.toggleMenu : null;
+
     return (
       <div className="navigation" style={divStyle}>
         <a
@@ -93,8 +96,8 @@ export default class Navigation extends React.Component {
           <FontAwesome name="bars" />
         </a>
         <ul className={listClassNames} style={{ margin: 0 }}>
-          <NavItem to="/" onClick={this.state.burgerPressed && this.toggleMenu}>Home</NavItem>
-          <NavItem to="/invitations" onClick={this.state.burgerPressed && this.toggleMenu}>Invitations</NavItem>
+          <NavItem to="/" onClick={itemClickHandler}>Home</NavItem>
+          <NavItem to="/invitations" onClick={itemClickHandler}>Invitations</NavItem>
           <NavItem>Registry</NavItem>
           <NavItem>More Info</NavItem>
           {loginLogoff}

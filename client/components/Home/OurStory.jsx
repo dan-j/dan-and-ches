@@ -13,18 +13,27 @@ const OurStory = () => (
         </div>
       </div>
     </div>
-    <h3>Where it began</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <h3>The engagement</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div className="column-group">
+      <div className="column-2">
+        <h3>Where it began</h3>
+        <p>They met in Torrevieja in the Summer of 2008. Dan was walking with a friend to meet some
+          people on the commercial centre. In front of them was a girl walking on her own, dressed
+          to the nines in a green dress. Dan thought it was right to point out the girl had a nice
+          bottom, but failed to say this quietly, which resulted in the girl to turn around. That
+          girl was Ches.</p>
+        <p>It turned out Ches was meeting the same group of people that night, so they ended up
+          walking to the Manhattan together. There they spoke all night long and shared their first
+          kiss. The rest is history...</p>
+      </div>
+      <div className="column-2">
+        <h3>The engagement</h3>
+        <p>2nd July 2016, nearly 8 years on, Dan organises a weekend away in the lake district.
+          After a day of adventure at Go Ape and seeing some of the countryside, they checked into
+          their hotel which to Ches’ surprise, was a luxury suite in the heart of Windermere. Later
+          that evening once they were ready to go out they decided to get a bottle of champagne, but
+          just as Dan was about to open it he instead got on one knee and popped the question. </p>
+      </div>
+    </div>
   </div>
 );
 
