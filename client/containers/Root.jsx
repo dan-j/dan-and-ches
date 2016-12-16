@@ -7,6 +7,7 @@ import Home from '../components/Home/index';
 import InvitationsContainer from './InvitationsContainer';
 import LoginContainer, { isLoggedIn } from '../containers/LoginContainer';
 import LogoutContainer from './LogoutContainer';
+import GettingHere from '../components/GettingHere';
 
 function requireAuth(nextState, replace) {
   if (!isLoggedIn()) {
@@ -29,6 +30,11 @@ const Root = () => (
         component={InvitationsContainer}
         header={{ mainHeader: 'You\'re Invited!' }}
         onEnter={requireAuth}
+      />
+      <Route
+        path="getting-here"
+        component={GettingHere}
+        header={{ mainHeader: 'Getting Here' }}
       />
     </Route>
     <Route path="/login" component={LoginContainer} />

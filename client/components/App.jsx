@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import ContentContainer from '../containers/ContentContainer';
+import Footer from './Footer';
 
 const App = (props) => {
   const { header } = props.routes[props.routes.length - 1];
@@ -10,6 +11,7 @@ const App = (props) => {
       <ContentContainer>
         {props.children}
       </ContentContainer>
+      <Footer />
     </div>
   );
 };

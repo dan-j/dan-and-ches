@@ -6,7 +6,6 @@ import TheDay from './TheDay';
 import Timetable from './Timetable';
 import Invitations from './InvitationsOverview';
 import Registry from './Registry';
-import MoreInfo from './MoreInfo';
 
 const Home = () => (
   <div>
@@ -16,7 +15,6 @@ const Home = () => (
     <Timetable />
     <Invitations />
     <Registry />
-    <MoreInfo />
   </div>
 );
 

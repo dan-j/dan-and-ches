@@ -1,3 +1,32 @@
+html, body, #root, div[data-reactroot] {
+  height: 100%;
+}
+
+div[data-reactroot] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.container {
+  flex: 1 0 auto;
+  margin: 2em 1.5em;
+}
+
+footer {
+  flex: 0 0 auto;
+
+  ul {
+    max-width: 1170px;
+    margin: auto;
+  }
+}
+
 body {
   font-family: Khula, cursive;
   margin: 0;
@@ -42,8 +71,20 @@ p {
   text-align: justify;
 }
 
-.container {
-  margin: 2em 1.5em;
+.button {
+  display: inline-block;
+  background-color: #DB807D;
+  color: white;
+  padding: 1em 1.5em;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #C9716E;
+  }
 }
 
 $headerHeight: 230px;

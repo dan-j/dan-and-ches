@@ -12,30 +12,6 @@ const inputStyle = {
   fontSize: '1em',
 };
 
-const submitStylePlain = {
-  width: '100%',
-  backgroundColor: '#DB807D',
-  color: 'white',
-  padding: '14px 20px',
-  margin: '8px 0',
-  border: 'none',
-  borderRadius: '4px',
-  cursor: 'pointer',
-  fontSize: '14px',
-};
-
-const submitStyleHovering = {
-  width: '100%',
-  backgroundColor: '#C9716E',
-  color: 'white',
-  padding: '14px 20px',
-  margin: '8px 0',
-  border: 'none',
-  borderRadius: '4px',
-  cursor: 'pointer',
-  fontSize: '14px',
-};
-
 export default class LoginForm extends React.Component {
 
   constructor(props) {
@@ -76,8 +52,6 @@ export default class LoginForm extends React.Component {
   }
 
   render() {
-    const submitStyle = this.state.hover ? submitStyleHovering : submitStylePlain;
-
     let errorMessage;
     if (this.props.error) {
       errorMessage = <span style={{ color: 'red' }}>{this.props.error}</span>;
@@ -111,9 +85,10 @@ export default class LoginForm extends React.Component {
           />
           {errorMessage}
           <input
+            className="button"
             type="submit"
             value="Login"
-            style={submitStyle}
+            style={{ display: 'block', width: '100%' }}
             onMouseEnter={this.toggleHover}
             onMouseLeave={this.toggleHover}
           />

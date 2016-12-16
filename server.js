@@ -33,17 +33,13 @@ const config = configLoader();
 const { url, user, pass } = config.db;
 const server = {
   auto_reconnect: true,
-  socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 },
+  socketOptions: { keepAlive: 1000, connectTimeoutMS: 30000 },
 };
 
 const connectDb = () => mongoose.connect(url, { user, pass, server });
 const db = mongoose.connection;
 
-db.on('error', (err) => {
-  winston.info(`db connection triggered an error: ${err}`)
-  connectDb();
-});
-db.on('disconnected', () => connectDb());
+db.on('error', err => winston.info(`db connection triggered an error: ${err}`));
 
 connectDb();
 

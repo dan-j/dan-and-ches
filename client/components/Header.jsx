@@ -3,7 +3,7 @@ import Navigation from './Navigation';
 import bgImage from '../static/manchester_1170_442@2x.jpg';
 
 const Header = ({ preHeader, mainHeader }) => (
-  <div
+  <header
     id="header"
     style={{
       textAlign: 'center',
@@ -43,7 +43,7 @@ const Header = ({ preHeader, mainHeader }) => (
       {preHeader && <h2 style={{ marginBottom: 0, fontWeight: 100 }}>{preHeader}</h2>}
       <h1 style={{ marginTop: 0, fontWeight: 100 }}>{mainHeader}</h1>
     </div>
-  </div>
+  </header>
 );
 
 Header.propTypes = {

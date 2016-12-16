@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ContentContainer = ({ children }) => (
-  <div className="container">
-    {children}
-  </div>
+const ContentContainer = (props) => (
+  <section className={'container'}>
+    {props.children}
+  </section>
 );
 
 ContentContainer.propTypes = {
