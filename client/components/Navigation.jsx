@@ -75,7 +75,7 @@ export default class Navigation extends React.Component {
     }
 
     const baseDivStyle = {
-      maxWidth: 1170, margin: 'auto', textAlign: 'right', color, zIndex: 3, position: 'relative',
+      maxWidth: 1170, textAlign: 'right', color, zIndex: 3, position: 'relative',
     };
 
     const navClassNames = classNames('navigation', { 'nav-open': this.state.burgerPressed });

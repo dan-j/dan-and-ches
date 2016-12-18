@@ -4,14 +4,12 @@ import SelfieCarousel from './SelfieCarousel';
 const OurStory = () => (
   <section>
     <h2>Our Story</h2>
-    <div>
-      <div
-        style={{ margin: 'auto', width: 250, height: 250, backgroundColor: 'grey' }}
-      >
-        <div>
-          <SelfieCarousel />
-        </div>
-      </div>
+    <div
+      style={{
+        margin: 'auto', width: 250, height: 250, backgroundColor: 'grey', marginBottom: '2em',
+      }}
+    >
+      <SelfieCarousel />
     </div>
     <div className="column-group">
       <div className="column-2">

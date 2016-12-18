@@ -10,7 +10,7 @@ const Footer = () => (
       textAlign: 'left',
     }}
   >
-    <ContentContainer>
+    <ContentContainer main>
       <section>
         <ul>
           <li><Link to="/getting-there">Getting Here</Link></li>

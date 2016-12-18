@@ -13,11 +13,10 @@ body {
 div[data-reactroot] {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 section {
-  margin: 2em 0;
+  margin: 0;
 }
 
 header {
@@ -30,11 +29,13 @@ header {
 
   &.main-content {
     flex: 1 0 auto;
+    margin: 2em 1.5em;
   }
 }
 
 footer {
   flex: 0 0 auto;
+  //padding: 2em 0;
 
   ul {
     max-width: 1170px;
@@ -51,11 +52,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 h3 {
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 ul {
@@ -110,6 +111,7 @@ $headerHeight: 230px;
 }
 
 .navigation {
+  margin: auto;
   height: 4em;
   -webkit-transition: height 500ms;
   -moz-transition: height 500ms;
@@ -118,31 +120,32 @@ $headerHeight: 230px;
   transition: height 500ms;
   overflow-x: hidden;
 
+  .nav-menu {
+    display: none;
+  }
+
   &.nav-open {
     height: 18em;
-  }
-}
+    margin-bottom: 1em;
 
-.nav-menu {
-  display: none;
+    .nav-menu-open {
+      border-top: solid 1px white;
+      padding: 0.5em 0;
+      display: block;
 
-  &.nav-menu-open {
-    border-top: solid 1px white;
-    padding: 0.5em 0;
-    display: block;
+      li {
+        display: block !important;
+        position: relative;
 
-    li {
-      display: block !important;
-      position: relative;
+        a {
+          margin: 0 0.25em !important;
+          border-top: none;
 
-      a {
-        margin: 0 0.25em !important;
-        border-top: none;
-
-        &.active {
-          margin: 0 !important;
-          color: #DB807D;
-          border-right: 0.25em solid #DB807D;
+          &.active {
+            margin: 0 !important;
+            color: #DB807D;
+            border-right: 0.25em solid #DB807D;
+          }
         }
       }
     }
@@ -150,7 +153,11 @@ $headerHeight: 230px;
 }
 
 .column-2, .column-3 {
-  margin: 2em 0;
+  margin: 0 0 2em;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 @media (min-width: 360px) {
@@ -178,10 +185,6 @@ $headerHeight: 230px;
 
 @media (min-width: 480px) {
 
-  .container {
-    margin: 2em;
-  }
-
   h1 {
     font-size: 2.6em;
   }
@@ -202,6 +205,8 @@ $headerHeight: 230px;
   }
 
   .column-group {
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
   }
 }
@@ -227,22 +232,25 @@ $headerHeight: 230px;
     display: none !important;
   }
 
-  .nav-menu {
-    display: block;
-    position: static;
+  .navigation {
 
-    li {
-      display: inline-block !important;
-      position: relative;
+    .nav-menu {
+      display: block;
+      position: static;
 
-      a {
-        margin: 0 0.25em !important;
+      li {
+        display: inline-block !important;
+        position: relative;
 
-        &.active {
-          color: #DB807D;
-          border-right: none;
-          border-top: 0.25em solid #DB807D;
+        a {
+          margin: 0 0.25em !important;
 
+          &.active {
+            color: #DB807D;
+            border-right: none;
+            border-top: 0.25em solid #DB807D;
+
+          }
         }
       }
     }
@@ -250,7 +258,7 @@ $headerHeight: 230px;
 
   .column-group {
     display: table;
-    margin: 2em;
+    margin: 2em auto 0;
 
     .column-2 {
       display: table-cell;
@@ -271,13 +279,13 @@ $headerHeight: 230px;
 
 @media (min-width: 900px) {
 
-  //body {
-  //  font-size: 16px;
-  //}
-
   .container {
     width: 900px;
-    margin: 2em auto;
+    margin: 0 auto;
+
+    &.main-content {
+      margin: 2em auto;
+    }
   }
 
   $headerHeight: 442px;

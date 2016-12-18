@@ -5,15 +5,13 @@ import ContentContainer from '../../containers/ContentContainer';
 
 const Login = ({ onLogon, error }) => (
   <div>
-    <header>
-      <Navigation color="black" />
-    </header>
+    <Navigation color="black" />
     <ContentContainer>
-      <div style={{ margin: '0 auto auto', maxWidth: '400px' }}>
-        <h2>Please Login</h2>
+      <section style={{ margin: '0 auto auto', maxWidth: '400px' }}>
+        <h2 style={{ marginTop: 0 }}>Please Login</h2>
         <p style={{ marginTop: 0 }}>Your PIN can be found in your invitation email</p>
         <LoginForm onLogon={onLogon} error={error} />
-      </div>
+      </section>
     </ContentContainer>
   </div>
 );
