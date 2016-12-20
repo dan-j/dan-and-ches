@@ -25,7 +25,6 @@ export default class LoginForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.login = this.login.bind(this);
-    this.toggleHover = this.toggleHover.bind(this);
   }
 
   handleChange(e) {
@@ -45,10 +44,6 @@ export default class LoginForm extends React.Component {
         this.props.onLogon();
       })
       .catch(err => this.props.onLogon(err));
-  }
-
-  toggleHover() {
-    this.setState({ hover: !this.state.hover });
   }
 
   render() {

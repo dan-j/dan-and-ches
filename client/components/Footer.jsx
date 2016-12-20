@@ -13,8 +13,10 @@ const Footer = () => (
     <ContentContainer main>
       <section>
         <ul>
-          <li><Link to="/getting-there">Getting Here</Link></li>
-          <li>Useful Links</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/invitations">Invitations</Link></li>
+          <li><Link to="/getting-there">Getting There</Link></li>
+          <li><Link to="/registry">Registry</Link></li>
           <li>Contact Us</li>
         </ul>
       </section>

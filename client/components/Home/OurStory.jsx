@@ -20,12 +20,12 @@ const OurStory = () => (
           bottom, but failed to say this quietly, which resulted in the girl to turn around. That
           girl was Ches.</p>
         <p>It turned out Ches was meeting the same group of people that night, so they ended up
-          walking to the Manhattan together. There they spoke all night long and shared their first
+          walking to the bar together. There they spoke all night long and shared their first
           kiss. The rest is history...</p>
       </div>
       <div className="column-2">
         <h3>The engagement</h3>
-        <p>2nd July 2016, nearly 8 years on, Dan organises a weekend away in the lake district.
+        <p>2nd July 2016, nearly 8 years on, Dan organises a weekend away in the Lake District.
           After a day of adventure at Go Ape and seeing some of the countryside, they checked into
           their hotel which to Ches’ surprise, was a luxury suite in the heart of Windermere. Later
           that evening once they were ready to go out they decided to get a bottle of champagne, but

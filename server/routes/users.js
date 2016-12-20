@@ -23,7 +23,7 @@ router.get('/me', (req, res) => {
   }
 });
 
-router.get('/:email', (req, res) => {
+router.get('/:emails', (req, res) => {
   const email = req.params.email;
   winston.log('trace', `Finding user by email: ${email}`);
   User.findOne({ email }, (err, user) => {

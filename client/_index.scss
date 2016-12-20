@@ -160,6 +160,28 @@ $headerHeight: 230px;
   }
 }
 
+table.registry {
+  border-collapse: collapse;
+  margin: -0.5em;
+  text-align: left;
+
+  thead {
+    background-color: #7f7f7f;
+    color: #f8f8f8;
+  }
+
+  tr:nth-child(even) {
+    td {
+      background-color: #f8f8f8;
+    }
+  }
+
+  td, th {
+    padding: 0.4em 0.5em 0.2em;
+  }
+
+}
+
 @media (min-width: 360px) {
 
   h1 {
@@ -208,6 +230,28 @@ $headerHeight: 230px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
+
+    &.column-group-sm {
+      display: table;
+      margin: 2em auto 0;
+    }
+  }
+
+  .column-group > .column-2.column-2-sm {
+    display: table-cell;
+    width: 45%;
+
+    &:first-child {
+      padding-right: 2em;
+    }
+
+    &:last-child {
+      padding-left: 2em;
+    }
+  }
+
+  table.registry {
+    margin: auto;
   }
 }
 

@@ -5,7 +5,7 @@ import winston from 'winston';
 import configLoader from '../config-loader';
 import User from '../models/User';
 
-// Setting username field to email rather than username
+// Setting username field to emails rather than username
 const localOptions = {
   usernameProp: 'email',
   passwordProp: 'pin',

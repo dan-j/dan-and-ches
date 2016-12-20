@@ -7,6 +7,7 @@ import Home from '../components/Home/index';
 import InvitationsContainer from './InvitationsContainer';
 import LoginContainer, { isLoggedIn } from '../containers/LoginContainer';
 import LogoutContainer from './LogoutContainer';
+import Registry from '../components/Registry';
 import GettingThere from '../components/GettingThere';
 
 function requireAuth(nextState, replace) {
@@ -19,7 +20,7 @@ function requireAuth(nextState, replace) {
 }
 
 const Root = () => (
-  <Router history={browserHistory}>
+  <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
     <Route path="/" component={App}>
       <IndexRoute
         component={Home}
@@ -35,6 +36,11 @@ const Root = () => (
         path="getting-there"
         component={GettingThere}
         header={{ mainHeader: 'Getting There' }}
+      />
+      <Route
+        path="registry"
+        component={Registry}
+        header={{ mainHeader: 'Registry' }}
       />
     </Route>
     <Route path="/login" component={LoginContainer} />

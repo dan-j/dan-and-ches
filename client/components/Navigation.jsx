@@ -100,7 +100,7 @@ export default class Navigation extends React.Component {
           <ul className={listClassNames} style={{ margin: 0 }}>
             <NavItem to="/" onClick={itemClickHandler}>Home</NavItem>
             <NavItem to="/invitations" onClick={itemClickHandler}>Invitations</NavItem>
-            <NavItem>Registry</NavItem>
+            <NavItem to="/registry" onClick={itemClickHandler}>Registry</NavItem>
             <NavItem to="/getting-there" onClick={itemClickHandler}>Getting There</NavItem>
             {loginLogoff}
           </ul>
