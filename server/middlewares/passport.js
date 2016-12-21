@@ -16,10 +16,10 @@ const { jwt: jwtConfig } = configLoader();
 
 // Setting up local login strategy
 const localStrategy = new JsonStrategy(localOptions, (req, email, pin, done) => {
-  const trimmedEmail = email.trim().toLowerCase();
+  const trimmedEmail = email.trim();
   const trimmedPin = pin.trim();
 
-  User.findOne({ email: trimmedEmail }, '+pin +email', (err, user) => {
+  User.findByEmail(trimmedEmail, (err, user) => {
     if (err) {
       return done(err);
     }

@@ -31,7 +31,12 @@ export default class ContactController {
   }
 
   sendInvitation(to, context) {
-    return this.invitationTemplateSender({ to, subject: 'You\'re invited!' }, context)
+    winston.info(`sending message to: ${to}`);
+    // return new Promise(resolve => resolve({ message: 'success', email: context.email }));
+    return this.invitationTemplateSender({
+      to,
+      subject: 'You\'re invited!',
+    }, context)
       .then(info => {
         winston.debug(`Sent message: ${info.messageId}`);
         return info;

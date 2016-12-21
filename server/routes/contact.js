@@ -16,17 +16,29 @@ router.get('/hello', (req, res) => {
 });
 
 if (process.env.NODE_ENV === 'development') {
-  router.get('/invite', (req, res) => {
+  // this sends an email to the logged in user with the invitation details of ?to=
+  router.get('/invite-test', (req, res) => {
     const { to } = req.query;
-    const { user } = req;
 
-    User.findOne(user._id, '+pin +email', (err, result) => contactController.sendInvitation(
-      to, {
-        name: user.name,
+    User.findByEmail(to.trim().toLowerCase(),
+      (err, result) => contactController.sendInvitation(req.user.email, {
+        name: result.name,
         email: result.email,
         pin: result.pin,
       }).then((info) => res.json(info))
         .catch(err2 => res.status(500).json(err2)));
+  });
+
+  router.get('/invite-all', (req, res) => {
+    User.find({}, '+pin', (err, users) => {
+      Promise.all(users.map(user => contactController.sendInvitation(req.user.email, {
+        name: user.name,
+        email: user.email,
+        pin: user.pin,
+      }))).then((result) => {
+        res.json(result);
+      }).catch(err2 => res.status(500).json(err2));
+    });
   });
 }
 
