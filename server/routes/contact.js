@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'development') {
 
     User.findByEmail(to.trim().toLowerCase(),
       (err, result) => contactController.sendInvitation(req.user.email, {
-        name: result.name,
+        name: result.friendlyName,
         email: result.email,
         pin: result.pin,
       }).then((info) => res.json(info))
@@ -30,9 +30,10 @@ if (process.env.NODE_ENV === 'development') {
   });
 
   router.get('/invite-all', (req, res) => {
+    const { to } = req.query;
     User.find({}, '+pin', (err, users) => {
-      Promise.all(users.map(user => contactController.sendInvitation(req.user.email, {
-        name: user.name,
+      Promise.all(users.map(user => contactController.sendInvitation(to, {
+        name: user.friendlyName,
         email: user.email,
         pin: user.pin,
       }))).then((result) => {

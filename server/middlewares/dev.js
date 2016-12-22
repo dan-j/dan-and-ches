@@ -19,7 +19,7 @@ const hotMiddleware = webpackHotMiddleware(compiler);
 // Ensure there's no important state in there!
 const watcher = chokidar.watch('./server');
 
-const ignoreSubPackages = ['models'];
+const ignoreSubPackages = [];
 
 const ignoreRegex = ignoreSubPackages.join('|');
 

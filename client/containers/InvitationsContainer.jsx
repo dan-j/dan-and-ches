@@ -26,7 +26,7 @@ export default class InvitationsContainer extends React.Component {
         .then(me => {
           this.setState({
             user: {
-              name: me.name,
+              friendlyName: me.friendlyName,
               partySize: me.partySize,
               ...me.invitation,
             },
@@ -41,10 +41,7 @@ export default class InvitationsContainer extends React.Component {
 
   render() {
     return this.state.loaded
-      ? <Invitations
-        myInvitation={this.state.user}
-        onLogoff={this.handleLogoff}
-      />
+      ? <Invitations myInvitation={this.state.user} />
       : <h2>Loading</h2>;
   }
 }

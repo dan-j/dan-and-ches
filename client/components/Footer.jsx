@@ -17,7 +17,6 @@ const Footer = () => (
           <li><Link to="/invitations">Invitations</Link></li>
           <li><Link to="/getting-there">Getting There</Link></li>
           <li><Link to="/registry">Registry</Link></li>
-          <li>Contact Us</li>
         </ul>
       </section>
     </ContentContainer>

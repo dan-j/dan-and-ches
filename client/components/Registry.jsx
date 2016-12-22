@@ -59,7 +59,8 @@ const data = [{
 const Registry = () => (
   <div>
     <p style={{ margin: '0 auto 1em', maxWidth: 550 }}>Because of our plans to travel we&apos;re not
-      expecting many gifts, but if you wanted to contribute, below is what we&apos;d get</p>
+      wanting many gifts, but if you&apos;d like to contribute to our trip, below is what we&apos;d
+      be spending our money on.</p>
     <table className="registry">
       <thead>
         <tr>
