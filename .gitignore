@@ -1,2 +1,9 @@
+/build
+/dist
+/node_modules
 /.idea
-node_modules/
+*-compiled.js
+*-compiled.js.map
+/db
+npm-debug.log
+.env
