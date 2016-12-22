@@ -10,7 +10,7 @@
   "main": "server.js",
   "scripts": {
     "clean": "rm -rf build",
-    "build-server": "babel -d ./build server.js -s && babel -d ./build config.js -s && babel -d ./build/server server -s",
+    "build-server": "babel -d ./build server.js -s && cp config.js build/ && babel -d ./build/server server -s",
     "build-client": "webpack -p --config webpack.config.js",
     "build": "npm run clean && npm run build-client && npm run build-server",
     "postinstall": "npm run build",
