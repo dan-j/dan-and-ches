@@ -17,6 +17,22 @@ exports.default = {
   db: mongoConfig,
 
   jwt: {
-    secretOrKey: 'mysecret',
+    secretOrKey: '',
+    issuer: '',
+    expiresIn: '1d',
+  },
+
+  email: {
+    transportOptions: {
+      host: '',
+      port: 587,
+      auth: {
+        user: 'me@example.com',
+        pass: 'changeme',
+      },
+    },
+    defaults: {
+      from: 'me@example.com',
+    },
   },
 };
