@@ -29,10 +29,22 @@ if (process.env.NODE_ENV === 'development') {
         .catch(err2 => res.status(500).json(err2)));
   });
 
+  router.get('/invite-user', (req, res) => {
+    const { to, user } = req.query;
+
+    User.findByEmail(user.trim(),
+      (err, result) => contactController.sendInvitation(to || user, {
+        name: result.friendlyName,
+        email: result.email,
+        pin: result.pin,
+      }).then(info => res.json(info))
+        .catch(err2 => res.status(500).json(err2)));
+  });
+
   router.get('/invite-all', (req, res) => {
     const { to } = req.query;
     User.find({}, '+pin', (err, users) => {
-      Promise.all(users.map(user => contactController.sendInvitation(to, {
+      Promise.all(users.map(user => contactController.sendInvitation(to || user.email, {
         name: user.friendlyName,
         email: user.email,
         pin: user.pin,

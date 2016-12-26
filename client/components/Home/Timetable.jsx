@@ -3,6 +3,7 @@ import React from 'react';
 const Timetable = () => (
   <section>
     <h2>Timetable</h2>
+    <h3>25th February 2017</h3>
     <ul>
       <li>1:20pm - Arrival</li>
       <li>1:40pm - Ceremony</li>
