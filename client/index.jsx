@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import 'font-awesome/scss/font-awesome.scss';
+import 'babel-polyfill'; // vomit - but it's a small site so i don't care
 import Root from './containers/Root';
 import './_index.scss';
 
