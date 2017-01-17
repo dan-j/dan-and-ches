@@ -16,9 +16,6 @@ const buttonStyle = {
 };
 
 const customModalStyles = {
-  overlay: {
-    zIndex: 10,
-  },
   content: {
     top: '50%',
     left: '50%',

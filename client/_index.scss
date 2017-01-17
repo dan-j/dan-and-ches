@@ -190,6 +190,75 @@ table.registry {
 
 }
 
+.ReactModalPortal {
+  height: 0;
+
+  .ReactModal__Overlay {
+    // vomit but react-modal puts element styles on DOM
+    background-color: rgba(50, 50, 50, 0.79) !important;
+    z-index: 10;
+  }
+
+  .ReactModal__Content {
+    -webkit-box-shadow:  5px 5px 10px -2px black;
+    -moz-box-shadow:  5px 5px 10px -2px black;
+    box-shadow:  5px 5px 10px -2px black;
+
+    width: 80%;
+    max-width: 720px;
+  }
+}
+
+.rsvp {
+  text-align: center;
+
+  p {
+    text-align: center;
+  }
+
+  .attending--yes-no > button {
+    display: inline-block;
+    background-color: #fafafa;
+    padding: 0.5em 1.5em;
+    margin: auto 0;
+    border: 1px solid black;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+    font-size: 14px;
+    color: black;
+    outline: none;
+    -webkit-box-shadow: inset 5px 5px 5px -3px #a0a0a0;
+    -moz-box-shadow: inset 5px 5px 5px -3px #a0a0a0;
+    box-shadow: inset 5px 5px 5px -3px #a0a0a0;
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+      margin-right: -1px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &.active {
+
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      background-color: #404040;
+      color: white;
+    }
+  }
+
+  form label {
+    display: inline-block;
+    min-width: 100px;
+    text-align: left;
+  }
+}
+
 @media (min-width: 360px) {
 
   h1 {
@@ -211,10 +280,6 @@ table.registry {
     font-size: 13px;
   }
 
-}
-
-.ReactModalPortal {
-  height: 0;
 }
 
 @media (min-width: 480px) {
@@ -367,4 +432,7 @@ table.registry {
 
 }
 
-
+/** hack to prevent iOS from zooming in on input elements **/
+input, select, textarea {
+  font-size: 16px;
+}

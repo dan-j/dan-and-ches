@@ -1,16 +1,6 @@
 import React from 'react';
+import classNames from 'classnames';
 import { invitationShape } from './common';
-
-const inputStyle = {
-  width: '100%',
-  padding: '0.5em 1em',
-  marginBottom: '1em',
-  display: 'inline-block',
-  border: '1px solid #ccc',
-  borderRadius: '4px',
-  boxSizing: 'border-box',
-  fontSize: '1em',
-};
 
 export default class Rsvp extends React.Component {
 
@@ -109,7 +99,7 @@ export default class Rsvp extends React.Component {
 
     return (
       <p key={eventName}>
-        <label htmlFor={eventName}>{friendlyName}</label>
+        <label htmlFor={eventName}>{friendlyName}:</label>
         <select
           name={eventName}
           defaultValue={rsvp[eventName]}
@@ -150,33 +140,36 @@ export default class Rsvp extends React.Component {
     if (attending != null) {
       if (attending) {
         content = (
-          <div>
-            <p>We're thrilled to be having you at the wedding! Choose the number of people
+          <section>
+            <p>We're thrilled to be having you! Choose the number of people
               attending the following parts of the day and submit to confirm your RSVP.</p>
             {this.generateRsvpForm()}
-          </div>
+          </section>
         );
       } else {
         content = (
-          <div>
-            <p>We're sorry you can't attend! If you change your mind then don't hesitate to contact
-              us, although once everyone has responded we may offer rejected invitations to
-              others.</p>
-            <input type="button" value="Confirm" onClick={this.submitRsvp}/>
-          </div>
+          <section>
+            <p><strong>:(</strong></p>
+            <p>We're sorry you can't attend. Please confirm your response below.</p>
+            <input type="button" value="Confirm" className="button" onClick={this.submitRsvp} />
+          </section>
         );
       }
     }
 
+    // must use strict operators since null is a possibility
+    const yesClass = classNames({ active: attending === true });
+    const noClass = classNames({ active: attending === false });
+
     return (
-      <div>
-        <h2>RSVP</h2>
-        <div>
-          <button onClick={this.toggleYes}>Yes</button>
-          <button onClick={this.toggleNo}>No</button>
-        </div>
+      <section className="rsvp">
+        <h4>Are you attending the wedding?</h4>
+        <section className="attending--yes-no">
+          <button className={yesClass} onClick={this.toggleYes}>Yes</button>
+          <button className={noClass} onClick={this.toggleNo}>No</button>
+        </section>
         {content}
-      </div>
+      </section>
     );
   }
 }
