@@ -53,6 +53,29 @@ if (process.env.NODE_ENV === 'development') {
       }).catch(err2 => res.status(500).json(err2));
     });
   });
+
+  router.get('/prompt-rsvp', (req, res) => {
+    const { to, user } = req.query;
+
+    User.findByEmail(user.trim(),
+      (err, result) => contactController.sendRsvpPrompt(to || user, {
+        name: result.friendlyName,
+      }).then(info => res.json(info))
+        .catch(err2 => res.status(500).json(err2)));
+  });
+
+  router.get('/prompt-rsvp-all', (req, res) => {
+    const { to } = req.query;
+
+    User.find({}, (err, users) => {
+      Promise.all(users.map(user =>
+        contactController.sendRsvpPrompt(to || user.email, {
+          name: user.friendlyName,
+        })
+      )).then((result) => res.json(result))
+        .catch(err2 => res.status(500).json(err2));
+    });
+  });
 }
 
 export default router;

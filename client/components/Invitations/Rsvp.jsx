@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import FontAwesome from 'react-fontawesome';
 import { invitationShape } from './common';
 import api from '../../services/api';
 
@@ -124,7 +125,7 @@ export default class Rsvp extends React.Component {
           defaultValue={rsvp[eventName]}
           onChange={this.optionSelected}>
           {options}
-        </select>
+        </select><span>&nbsp;people</span>
         <br />
       </p>
     );
@@ -182,6 +183,7 @@ export default class Rsvp extends React.Component {
 
     return (
       <section className="rsvp">
+        <FontAwesome name="times" onClick={this.props.closeModal} style={{ position: 'absolute', top: 0, right: 0, fontSize: '1.5em', padding: '0.25em' }} />
         <h4>Are you attending the wedding?</h4>
         <section className="attending--yes-no">
           <button className={yesClass} onClick={this.toggleYes}>Yes</button>
