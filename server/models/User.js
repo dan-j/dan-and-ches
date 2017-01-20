@@ -13,6 +13,11 @@ const UserSchema = new Schema({
     meal: Boolean,
     evening: Boolean,
   },
+  rsvp: {
+    ceremony: Number,
+    meal: Number,
+    evening: Number,
+  },
   pin: { type: String, select: false },
 }, {
   collection: 'users',

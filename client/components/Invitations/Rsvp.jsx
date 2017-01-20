@@ -1,12 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import { invitationShape } from './common';
+import api from '../../services/api';
 
 export default class Rsvp extends React.Component {
 
   static propTypes = {
     invitation: invitationShape.isRequired,
     closeModal: React.PropTypes.func.isRequired,
+    submitted: React.PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -39,23 +41,33 @@ export default class Rsvp extends React.Component {
   }
 
   submitRsvp() {
-    const { rsvp } = this.state;
-
-    if (this.state.attending === false) {
-      const rejectRsvp = Object.keys(rsvp)
-        .reduce((obj, curr) => Object.assign(obj, { [curr]: 0 }), {});
-      console.log(`Submitting RSVP with: ${JSON.stringify(rejectRsvp)}`);
-    } else {
-      console.log(`Submitting RSVP: ${JSON.stringify(this.state.rsvp)}`);
+    if (this.state.attending === null) {
+      this.props.closeModal();
+      return;
     }
 
-    this.props.closeModal();
+    const { token } = localStorage;
+    let { rsvp } = this.state;
+
+    if (!this.state.attending) {
+      rsvp = Object.keys(rsvp)
+        .reduce((obj, curr) => Object.assign(obj, { [curr]: 0 }), {});
+    }
+
+    console.log(`Submitting RSVP: ${JSON.stringify(rsvp)}`);
+    api.submitRsvp(token, rsvp)
+      .then(json => {
+        this.props.closeModal();
+        this.props.submitted(json); // `user` object
+      });
+
+    // TODO: Need to update InvitationContainer to pass rsvp object as props
   }
 
   generateRsvpForm() {
 
     // essentially a flatMap implementation which takes a list of JSX from generateOptionElem and
-    // returns a list of JSX for all events the user is invitated to
+    // returns a list of JSX for all events the user is invited to
     const inputs = Object.keys(this.state.rsvp)
       .reduce(
         (list, eventName) => list.concat(this.generateOptionElem(eventName)),
@@ -77,17 +89,24 @@ export default class Rsvp extends React.Component {
 
   optionSelected(event) {
     const { name, value } = event.target;
-    this.setState({ rsvp: Object.assign(this.state.rsvp, { [name]: parseInt(value) })});
+    this.setState({ rsvp: Object.assign(this.state.rsvp, { [name]: parseInt(value) }) });
   }
 
   generateOptionElem(eventName) {
     let friendlyName;
 
     switch (eventName) {
-      case 'ceremony': friendlyName = 'Ceremony'; break;
-      case 'meal': friendlyName = 'Meal'; break;
-      case 'evening': friendlyName = 'Evening'; break;
-      default: throw new Error(`Event name must be ceremony|meal|evening but was: ${eventName}`);
+      case 'ceremony':
+        friendlyName = 'Ceremony';
+        break;
+      case 'meal':
+        friendlyName = 'Meal';
+        break;
+      case 'evening':
+        friendlyName = 'Evening';
+        break;
+      default:
+        throw new Error(`Event name must be ceremony|meal|evening but was: ${eventName}`);
     }
 
     const { rsvp } = this.state;
@@ -104,7 +123,7 @@ export default class Rsvp extends React.Component {
           name={eventName}
           defaultValue={rsvp[eventName]}
           onChange={this.optionSelected}>
-            {options}
+          {options}
         </select>
         <br />
       </p>
@@ -151,7 +170,7 @@ export default class Rsvp extends React.Component {
           <section>
             <p><strong>:(</strong></p>
             <p>We're sorry you can't attend. Please confirm your response below.</p>
-            <input type="button" value="Confirm" className="button" onClick={this.submitRsvp} />
+            <input type="button" value="Confirm" className="button" onClick={this.submitRsvp}/>
           </section>
         );
       }

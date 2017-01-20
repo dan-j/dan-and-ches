@@ -34,11 +34,12 @@ const getUsers = token => makeApiRequest('/api/users', authHeader(token));
 
 const getMe = token => makeApiRequest('/api/users/me', authHeader(token));
 
-const rsvp = (email, token, content) => ({ email, token, content });
+const submitRsvp = (token, rsvp) =>
+  makeApiRequest('/api/users/me/rsvp', authHeader(token), POST, rsvp);
 
 export default {
   login,
   getUsers,
   getMe,
-  rsvp,
+  submitRsvp,
 };
