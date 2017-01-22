@@ -11,6 +11,23 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/me/rsvp', (req, res) => {
+  const { user } = req;
+  winston.info(`received RSVP for user ${user.email}`);
+
+  user.rsvp = req.body;
+  user.save((err) => {
+    if (!err) {
+      console.log('User updated! sending 200 response');
+      res.status(200).json(user);
+    } else {
+      console.log(`Unable to save user: ${err}`);
+      res.sendStatus(500);
+    }
+  });
+
+});
+
 router.get('/me', (req, res) => {
   const { user } = req;
   if (user) {
