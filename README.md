@@ -8,9 +8,13 @@ by the single express app with webpack building it prior to running, or when in 
  express makes use of webpack-dev-middleware and webpack-hot-middleware to build and serve the 
  bundles in real-time. 
 
+_Note to readers: This started off quite a well-written project but now it's a bit more hacky. 
+There's less separation between container and presentation react components and the API has 
+slowly lost its "RESTful-ness"._ :cry:
+
 ## How it works
 
-Too learn more on how both client-side and server-side HMR works, see the README for the 
+To learn more on how both client-side and server-side HMR works, see the README for the 
 react-express-starter which this has been built upon (mentioned above).
 
 ## Usage

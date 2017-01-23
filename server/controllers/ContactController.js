@@ -52,7 +52,7 @@ export default class ContactController {
     winston.info(`sending RSVP prompt to: ${to}`);
     return this.rsvpPromptTemplateSender({
       to,
-      subject: 'It\'s time to RSVP',
+      subject: 'It\'s time to RSVP!',
     }, context)
       .then(info => {
       winston.debug(`Sent message: ${info.messageId}`);
