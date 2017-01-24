@@ -31,7 +31,7 @@ const customModalStyles = {
 const EventInvitationDiv = ({ name, value }) => (
   <div className="invitation-elem" style={{ display: 'inline-block', width: 90 }}>
     <span style={{ display: 'inherit', fontSize: '2em' }}>
-      <FontAwesome name={value}/>
+      <FontAwesome name={value} />
     </span>
     <br />
     <span style={{ display: 'inherit', margin: '1em auto 0' }}>{name}</span>
@@ -49,7 +49,7 @@ export default class Invitations extends React.Component {
     super(props);
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
     };
 
     this.openModal = this.openModal.bind(this);
@@ -82,8 +82,8 @@ export default class Invitations extends React.Component {
     if (rsvp) {
       // if any keys in the object is > 0 then they're attending
       const message = Object.keys(rsvp).filter(e => rsvp[e] > 0).length !== 0
-        ? <p style={{textAlign: 'center' }}>We can't wait to see you on our big day!</p>
-        : <p style={{textAlign: 'center' }}>We're sorry you can't make it, let us know if you change your mind</p>;
+        ? <p style={{ textAlign: 'center' }}>We can&apos;t wait to see you on our big day!</p>
+        : <p style={{ textAlign: 'center' }}>We&apos;re sorry you can&apos;t make it, let us know if you change your mind</p>;
       rsvpContent = (
         <div className="alert-success">
           <h4>Thanks for your RSVP</h4>
@@ -101,9 +101,9 @@ export default class Invitations extends React.Component {
         <p style={{ textAlign: 'center' }}>
           Your invitation is for {partySize} {partySize === 1 ? ' person' : ' people'}.</p>
         <div style={{ textAlign: 'center' }}>
-          <EventInvitationDiv value={ceremony ? 'check' : 'times'} name="Ceremony"/>
-          <EventInvitationDiv value={meal ? 'check' : 'times'} name="Meal"/>
-          <EventInvitationDiv value={evening ? 'check' : 'times'} name="Evening"/>
+          <EventInvitationDiv value={ceremony ? 'check' : 'times'} name="Ceremony" />
+          <EventInvitationDiv value={meal ? 'check' : 'times'} name="Meal" />
+          <EventInvitationDiv value={evening ? 'check' : 'times'} name="Evening" />
         </div>
         {mealText}
         <p style={{ textAlign: 'center', fontSize: 'smaller' }}><em>For timings of the day, see the <Link to="/#timetable">
@@ -115,9 +115,11 @@ export default class Invitations extends React.Component {
           style={customModalStyles}
           contentLabel="Example Modal"
         >
-          <Rsvp invitation={this.props.myInvitation}
-                closeModal={this.closeModal}
-                submitted={this.props.rsvpSubmitted} />
+          <Rsvp
+            invitation={this.props.myInvitation}
+            closeModal={this.closeModal}
+            submitted={this.props.rsvpSubmitted}
+          />
         </Modal>
       </div>
     );

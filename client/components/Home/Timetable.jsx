@@ -3,11 +3,13 @@ import { Link } from 'react-router';
 
 const LocationBlock = ({ location, children }) => (
   <div style={{ textAlign: 'left', margin: 'auto', display: 'table', maxWidth: 320, width: '100%' }}>
-    <div style={{
-      textAlign: 'left',
-      padding: '1em 0.5em 0',
-      verticalAlign: 'top',
-    }}>
+    <div
+      style={{
+        textAlign: 'left',
+        padding: '1em 0.5em 0',
+        verticalAlign: 'top',
+      }}
+    >
       <Link to="/getting-there">{location}</Link>
     </div>
     <div style={{ textAlign: 'right', padding: '0 0.5em' }}>
@@ -15,6 +17,11 @@ const LocationBlock = ({ location, children }) => (
     </div>
   </div>
 );
+
+LocationBlock.propTypes = {
+  location: React.PropTypes.string,
+  children: React.PropTypes.node,
+};
 
 const Timetable = () => (
   <section id="timetable">

@@ -55,8 +55,8 @@ export default class ContactController {
       subject: 'It\'s time to RSVP!',
     }, context)
       .then(info => {
-      winston.debug(`Sent message: ${info.messageId}`);
-      return info;
-    });
+        winston.debug(`Sent message: ${info.messageId}`);
+        return info;
+      });
   }
 }

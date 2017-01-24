@@ -71,7 +71,7 @@ if (process.env.NODE_ENV === 'development') {
       Promise.all(users.map(user =>
         contactController.sendRsvpPrompt(to || user.email, {
           name: user.friendlyName,
-        })
+        }),
       )).then((result) => res.json(result))
         .catch(err2 => res.status(500).json(err2));
     });

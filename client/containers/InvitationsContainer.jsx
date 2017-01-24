@@ -51,7 +51,6 @@ export default class InvitationsContainer extends React.Component {
   }
 
   render() {
-
     if (this.state.error) {
       return (
         <div>
@@ -62,9 +61,10 @@ export default class InvitationsContainer extends React.Component {
     }
 
     return this.state.loaded
-      ? <Invitations myInvitation={this.state.invitation}
-                     rsvpSubmitted={this.extractUser}
-                     rsvp={this.state.rsvp}
+      ? <Invitations
+        myInvitation={this.state.invitation}
+        rsvpSubmitted={this.extractUser}
+        rsvp={this.state.rsvp}
       />
       : <h2>Loading</h2>;
   }

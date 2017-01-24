@@ -18,14 +18,13 @@ router.post('/me/rsvp', (req, res) => {
   user.rsvp = req.body;
   user.save((err) => {
     if (!err) {
-      console.log('User updated! sending 200 response');
+      winston.info('User updated! sending 200 response');
       res.status(200).json(user);
     } else {
-      console.log(`Unable to save user: ${err}`);
+      winston.info(`Unable to save user: ${err}`);
       res.sendStatus(500);
     }
   });
-
 });
 
 router.get('/me', (req, res) => {

@@ -26,7 +26,7 @@ export default class Rsvp extends React.Component {
      */
     const rsvp = Object.keys({ ceremony, meal, evening })
       .filter(key => invitation[key])
-      .reduce((rsvp, event) => Object.assign(rsvp, { [event]: partySize }), {});
+      .reduce((obj, event) => Object.assign(obj, { [event]: partySize }), {});
 
     this.state = {
       rsvp,
@@ -55,7 +55,6 @@ export default class Rsvp extends React.Component {
         .reduce((obj, curr) => Object.assign(obj, { [curr]: 0 }), {});
     }
 
-    console.log(`Submitting RSVP: ${JSON.stringify(rsvp)}`);
     api.submitRsvp(token, rsvp)
       .then(json => {
         this.props.closeModal();
@@ -66,13 +65,12 @@ export default class Rsvp extends React.Component {
   }
 
   generateRsvpForm() {
-
     // essentially a flatMap implementation which takes a list of JSX from generateOptionElem and
     // returns a list of JSX for all events the user is invited to
     const inputs = Object.keys(this.state.rsvp)
       .reduce(
         (list, eventName) => list.concat(this.generateOptionElem(eventName)),
-        []
+        [],
       );
 
     return (
@@ -90,7 +88,7 @@ export default class Rsvp extends React.Component {
 
   optionSelected(event) {
     const { name, value } = event.target;
-    this.setState({ rsvp: Object.assign(this.state.rsvp, { [name]: parseInt(value) }) });
+    this.setState({ rsvp: Object.assign(this.state.rsvp, { [name]: parseInt(value, 10) }) });
   }
 
   generateOptionElem(eventName) {
@@ -123,7 +121,8 @@ export default class Rsvp extends React.Component {
         <select
           name={eventName}
           defaultValue={rsvp[eventName]}
-          onChange={this.optionSelected}>
+          onChange={this.optionSelected}
+        >
           {options}
         </select><span>&nbsp;people</span>
         <br />
@@ -152,7 +151,6 @@ export default class Rsvp extends React.Component {
   }
 
   render() {
-
     const { attending } = this.state;
 
     let content;
@@ -161,7 +159,7 @@ export default class Rsvp extends React.Component {
       if (attending) {
         content = (
           <section>
-            <p>We're thrilled to be having you! Choose the number of people
+            <p>We&apos;re thrilled to be having you! Choose the number of people
               attending the following parts of the day and submit to confirm your RSVP.</p>
             {this.generateRsvpForm()}
           </section>
@@ -170,8 +168,8 @@ export default class Rsvp extends React.Component {
         content = (
           <section>
             <p><strong>:(</strong></p>
-            <p>We're sorry you can't attend. Please confirm your response below.</p>
-            <input type="button" value="Confirm" className="button" onClick={this.submitRsvp}/>
+            <p>We&apos;re sorry you can&apos;t attend. Please confirm your response below.</p>
+            <input type="button" value="Confirm" className="button" onClick={this.submitRsvp} />
           </section>
         );
       }
