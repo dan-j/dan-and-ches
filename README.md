@@ -41,8 +41,8 @@ package script to clean, build and start the application, `npm run start:clean`.
 
 ### Tests
 
-[Jest](https://facebook.github.io/jest/) is used for test. To run, execute `jest` from the root 
-of the repository, or `npm run test`.
+Sadly there are no tests... well, there is one, but it fails since it's not been updated since 
+the start of the project :disappointed:.
 
 ### Linting
 
