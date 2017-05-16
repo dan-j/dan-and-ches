@@ -12,6 +12,10 @@ _Note to readers: This started off quite a well-written project but now it's a b
 There's less separation between container and presentation react components and the API has 
 slowly lost its "RESTful-ness"._ :cry:
 
+Here's a preview!
+
+![](homepage.jpg?raw=true)
+
 ## How it works
 
 To learn more on how both client-side and server-side HMR works, see the README for the 
