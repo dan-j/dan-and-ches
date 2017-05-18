@@ -16,6 +16,10 @@ Here's a preview!
 
 ![](homepage.jpg?raw=true)
 
+With a mobile-first design:
+
+![](homepage-mobile.jpg?raw=true)
+
 ## How it works
 
 To learn more on how both client-side and server-side HMR works, see the README for the 
